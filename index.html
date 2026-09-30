@@ -1,103 +1,155 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Goreplix</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, Helvetica, sans-serif;
-    }
-
-    body{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#0f0f0f;
-      color:white;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .bg{
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at top left, rgba(255,0,0,0.15), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 30%);
-      filter:blur(10px);
-    }
-
-    .container{
-      position:relative;
-      text-align:center;
-      padding:40px;
-      max-width:600px;
-      z-index:1;
-    }
-
-    h1{
-      font-size:64px;
-      letter-spacing:2px;
-      margin-bottom:20px;
-      color:#ffffff;
-    }
-
-    p{
-      font-size:20px;
-      color:#cfcfcf;
-      line-height:1.6;
-    }
-
-    .line{
-      width:120px;
-      height:4px;
-      background:#ff2b2b;
-      margin:25px auto;
-      border-radius:10px;
-    }
-
-    .footer{
-      margin-top:35px;
-      font-size:14px;
-      color:#777;
-    }
-
-    @media(max-width:600px){
-      h1{
-        font-size:42px;
-      }
-
-      p{
-        font-size:17px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reseller CUBAY Studios</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--card:#fff;--ink:#14213d;--muted:#5b6b82;--line:#d5dde8;--accent:#2a6fdb;--accent-ink:#fff;--ok:#1e8e5a;--okbg:#e2f5ec;--err:#c0392b;--warnbg:#fff4d6;--warn:#7a5a00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1522;--card:#172033;--ink:#e8eef8;--muted:#9aabc4;--line:#2b3a55;--accent:#5b9bff;--accent-ink:#0e1522;--ok:#4cc38a;--okbg:#12362a;--err:#ff7b6b;--warnbg:#3a3010;--warn:#f3d675}}
+:root[data-theme="dark"]{--bg:#0e1522;--card:#172033;--ink:#e8eef8;--muted:#9aabc4;--line:#2b3a55;--accent:#5b9bff;--accent-ink:#0e1522;--ok:#4cc38a;--okbg:#12362a;--err:#ff7b6b;--warnbg:#3a3010;--warn:#f3d675}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+main{width:100%;max-width:420px}
+h1{font-size:1.6rem;font-weight:800;margin:0 0 4px;letter-spacing:-.02em}
+p.sub{margin:0 0 20px;color:var(--muted);font-size:.95rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg);padding:4px;border-radius:10px;margin-bottom:20px}
+.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;padding:9px;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 6px}
+label:first-child{margin-top:0}
+input{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink)}
+input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.hint{display:block;margin-top:4px;font-size:.78rem;color:var(--muted)}
+.btn{width:100%;margin-top:20px;border:0;border-radius:9px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;padding:12px;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:10px}
+.msg{min-height:1.3em;margin:12px 0 0;font-size:.88rem;color:var(--err)}
+.msg.ok{color:var(--ok)}
+.hidden{display:none}
+.user{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+.user b{display:block}.user span{font-size:.85rem;color:var(--muted)}
+.badge{font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:99px;background:var(--warnbg);color:var(--warn);white-space:nowrap}
+.info{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem}
+.info div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.info span{color:var(--muted)}
+.wait{margin:16px 0 0;color:var(--muted);font-size:.92rem}
+</style>
 </head>
 <body>
+<main>
+  <h1>Reseller CUBAY Studios</h1>
+  <p class="sub" id="sub">Masuk atau daftar dengan akun Roblox-mu.</p>
 
-  <div class="bg"></div>
-
-  <div class="container">
-    <h1>Goreplix</h1>
-
-    <div class="line"></div>
-
-    <p>
-      Website ini sudah tidak beroperasi.
-      <br>
-      Terima kasih telah mengunjungi Goreplix.
-    </p>
-
-    <div class="footer">
-      © 2026 Goreplix
+  <section class="card" id="auth">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tabLogin" aria-selected="true">Masuk</button>
+      <button role="tab" id="tabReg" aria-selected="false">Daftar</button>
     </div>
-  </div>
+    <form id="fLogin" novalidate>
+      <label for="lUser">Username Roblox</label><input id="lUser" type="text" autocomplete="username" autocapitalize="none">
+      <label for="lPass">Kata sandi</label><input id="lPass" type="password" autocomplete="current-password">
+      <button class="btn" type="submit">Masuk</button>
+    </form>
+    <form id="fReg" class="hidden" novalidate>
+      <label for="rUser">Username Roblox</label><input id="rUser" type="text" autocapitalize="none" autocomplete="username">
+      <label for="rId">ID Roblox</label><input id="rId" type="text" inputmode="numeric">
+      <small class="hint">Angka di link profilmu: roblox.com/users/<b>ID</b>/profile</small>
+      <label for="rWa">Nomor WhatsApp</label><input id="rWa" type="tel" inputmode="tel">
+      <label for="rPass">Kata sandi (min. 6 karakter)</label><input id="rPass" type="password" autocomplete="new-password">
+      <small class="hint">Buat kata sandi baru. Jangan pakai kata sandi Roblox.</small>
+      <button class="btn" id="regBtn" type="submit">Daftar</button>
+    </form>
+    <p class="msg" id="authMsg" role="alert"></p>
+  </section>
 
+  <section class="card hidden" id="home">
+    <div class="user">
+      <div><b id="uName"></b><span id="uId"></span></div>
+      <span class="badge">Menunggu verifikasi</span>
+    </div>
+    <div class="info">
+      <div><span>Username Roblox</span><b id="iUser"></b></div>
+      <div><span>ID Roblox</span><b id="iId"></b></div>
+      <div><span>WhatsApp</span><b id="iWa"></b></div>
+    </div>
+    <p class="wait">Tim CUBAY Studios memeriksa datamu secara manual dan menghubungimu lewat WhatsApp setelah selesai.</p>
+    <button class="btn ghost" id="logout" type="button">Keluar</button>
+  </section>
+</main>
+
+<script>
+(function(){
+  // ====== PENGATURAN ======
+  // Tempel URL Web App Google Apps Script di sini
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbxrXS9VoFGKX39Px6i2Ds5H5gCQUJPlRqrM_teR5NMAeb5HpdxZayfjEmOL1mzkDbwRBg/exec';
+  // ========================
+
+  var mem={local:{},session:{}};
+  function store(k){return k==='local'?localStorage:sessionStorage}
+  function get(k,key){try{var v=store(k).getItem(key);return v===null?(mem[k][key]||null):v}catch(e){return mem[k][key]||null}}
+  function set(k,key,v){mem[k][key]=v;try{store(k).setItem(key,v)}catch(e){}}
+  function del(k,key){delete mem[k][key];try{store(k).removeItem(key)}catch(e){}}
+  function users(){try{return JSON.parse(get('local','cubay_users')||'{}')}catch(e){return {}}}
+
+  function $(id){return document.getElementById(id)}
+  function say(text,ok){var el=$('authMsg');el.textContent=text;el.className='msg'+(ok?' ok':'')}
+  async function hash(s){
+    try{var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+    catch(e){return btoa(unescape(encodeURIComponent(s)))}
+  }
+
+  function tab(reg){
+    $('tabLogin').setAttribute('aria-selected',!reg);$('tabReg').setAttribute('aria-selected',reg);
+    $('fLogin').classList.toggle('hidden',reg);$('fReg').classList.toggle('hidden',!reg);say('');
+  }
+  $('tabLogin').onclick=function(){tab(false)};$('tabReg').onclick=function(){tab(true)};
+
+  $('fReg').onsubmit=async function(e){
+    e.preventDefault();
+    var d={username:$('rUser').value.trim(),id:$('rId').value.trim(),wa:$('rWa').value.trim()},p=$('rPass').value,key=d.username.toLowerCase();
+    if(!/^[A-Za-z0-9_]{3,20}$/.test(d.username)) return say('Username Roblox harus 3-20 karakter: huruf, angka, atau garis bawah.');
+    if(!/^\d{1,15}$/.test(d.id)) return say('ID Roblox harus berupa angka.');
+    if(!/^[+0-9][0-9 \-]{8,17}$/.test(d.wa)) return say('Isi nomor WhatsApp yang valid.');
+    if(p.length<6) return say('Kata sandi minimal 6 karakter.');
+    if(users()[key]) return say('Username ini sudah terdaftar. Silakan masuk.');
+    if(!ENDPOINT) return say('Pendaftaran belum aktif. Isi ENDPOINT di dalam kode.');
+    var btn=$('regBtn');btn.disabled=true;btn.textContent='Mendaftar...';say('');
+    d.waktu=new Date().toLocaleString('id-ID');
+    var pass=await hash(p);
+    // text/plain + no-cors agar Apps Script menerima tanpa preflight CORS
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+      .then(function(){
+        var u=users();u[key]={username:d.username,id:d.id,wa:d.wa,pass:pass,waktu:d.waktu};set('local','cubay_users',JSON.stringify(u));
+        $('fReg').reset();tab(false);$('lUser').value=d.username;say('Pendaftaran terkirim. Silakan masuk.',true);
+      })
+      .catch(function(){say('Gagal mengirim data. Periksa koneksi lalu coba lagi.')})
+      .then(function(){btn.disabled=false;btn.textContent='Daftar'});
+  };
+
+  $('fLogin').onsubmit=async function(e){
+    e.preventDefault();
+    var u=users()[$('lUser').value.trim().toLowerCase()];
+    if(!u||u.pass!==await hash($('lPass').value)) return say('Username atau kata sandi salah.');
+    set('session','cubay_session',u.username.toLowerCase());$('lPass').value='';say('');render();
+  };
+
+  $('logout').onclick=function(){del('session','cubay_session');render()};
+
+  function render(){
+    var k=get('session','cubay_session'),u=k&&users()[k];
+    $('auth').classList.toggle('hidden',!!u);$('home').classList.toggle('hidden',!u);
+    $('sub').textContent=u?'Datamu sudah kami terima.':'Masuk atau daftar dengan akun Roblox-mu.';
+    if(!u) return;
+    $('uName').textContent=u.username;$('uId').textContent='ID '+u.id;
+    $('iUser').textContent=u.username;$('iId').textContent=u.id;$('iWa').textContent=u.wa;
+  }
+  render();
+})();
+</script>
 </body>
 </html>

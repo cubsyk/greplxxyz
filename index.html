@@ -87,9 +87,9 @@ nav.active{display:flex}
 .category .w{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:800;border-radius:3px;padding:2px 8px;margin:0 0 10px}
 .category p.t{color:var(--muted);margin:0 0 22px}
 .category .read-more{position:relative;width:100%;text-align:center;padding:12px 18px}
-.ad-slot{margin:36px 0 8px;text-align:center;min-height:100px}
+.ad-slot{margin:12px 0 0;text-align:center;min-height:0}
 .ad-slot small{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
-.contact-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;margin:32px 0 0;padding:18px 24px}
+.contact-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;margin:12px 0 0;padding:18px 24px}
 .contact-box h2{font-size:20px;margin:0}
 .contact-box .social-links-text{display:flex;flex-wrap:wrap;gap:4px 28px}
 .contact-box p{margin:0}
@@ -100,6 +100,12 @@ header{background:#111318 !important;border-bottom:3px solid var(--red)}
 header nav a{color:#f4f5f7 !important}
 header nav a:hover{background:var(--red);color:#fff !important}
 header .hamburger .bar{background:var(--red)}
+/* Mobile dropdown: keep contrast with the dark header */
+@media (max-width:768px){
+  header nav{background:#111318!important;border-color:#353943!important}
+  header nav a{color:#f4f5f7!important}
+  header nav a:hover,header nav a:focus-visible,header nav a[aria-current="page"]{background:var(--red)!important;color:#fff!important}
+}
 </style>
     <script src="https://pl28818095.profitableratecpmnetwork.com/08/69/5b/08695b6a66660a6bae4dcc925f06c1ff.js"></script>
     <script src="https://pl28818102.profitableratecpmnetwork.com/80/82/95/8082954a08f8f4df4f8a24faa1e53509.js"></script>

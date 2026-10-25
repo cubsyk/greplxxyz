@@ -1,202 +1,1905 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Goreplix adalah situs yang menyediakan konten terkait Darkness dan Incident, untuk pengguna berusia 18 tahun ke atas.">
-    <meta name="keywords" content="Goreplix, goreplix">    
-    <title>Goreplix</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-:root{--ink:#161a22;--paper:#f4f5f7;--card:#fff;--line:#d9dce2;--muted:#5b6270;--red:#c8102e;--red-d:#9d0c24;--serif:Charter,'Iowan Old Style','Palatino Linotype',Georgia,serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
-@media (prefers-color-scheme:dark){:root{--ink:#eceef2;--paper:#111318;--card:#1a1d24;--line:#2c313b;--muted:#9aa2b1;--red:#ff4d63;--red-d:#ff7a8a}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;height:100%}
-body{margin:0;min-height:100%;display:flex;flex-direction:column;font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
-a{color:var(--red)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-header{position:sticky;top:0;z-index:1000;background:var(--card);border-bottom:3px solid var(--red)}
-.bar-wrap{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{width:130px;height:auto;display:block}
-nav{display:flex;gap:6px}
-nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:8px 14px;border-radius:6px}
-nav a:hover{background:var(--red);color:#fff}
-.hamburger{display:none;flex-direction:column;cursor:pointer;padding:8px}
-.bar{height:3px;width:25px;background:var(--red);margin:3px 0;transition:.3s}
-.notice{background:var(--ink);color:var(--paper);font-size:14px}
-.notice p{max-width:1040px;margin:0 auto;padding:10px 20px}
-.notice a{color:#ffd6dc}
-main{flex:1;width:100%;max-width:1040px;margin:0 auto;padding:32px 20px}
-.masthead-title{font-family:var(--serif);font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
-.deck{font-family:var(--serif);color:var(--muted);font-size:18px;margin:0 0 28px;max-width:60ch}
-.rule{border:0;border-top:1px solid var(--line);margin:28px 0}
-.sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.category{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:4px;padding:24px;display:flex;flex-direction:column;align-items:flex-start}
-.category img{width:56px;height:auto;margin-bottom:14px}
-.category h1{font-family:var(--serif);font-size:30px;margin:0 0 4px}
-.category h1 a{color:var(--ink);text-decoration:none}
-.category h1 a:hover{color:var(--red)}
-.category .w{font-weight:700;color:var(--red);margin:0 0 8px}
-.category p{margin:0 0 12px}
-.category strong{color:var(--red)}
-.read-more{margin-top:auto;display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:4px}
-.read-more:hover{background:var(--red-d)}
-.extra{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0 0 24px;font-size:15px}
-.contact-box{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:20px 24px;margin:28px 0}
-.contact-box h2{font-family:var(--serif);margin:0 0 8px}
-.contact-box p{margin:2px 0}
-.doc{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:clamp(20px,4vw,40px);max-width:760px;margin:0 auto}
-.doc h2{font-family:var(--serif);font-size:32px;margin:0 0 16px}
-.doc h3{font-family:var(--serif);margin:24px 0 6px}
-.doc p,.doc li{font-family:var(--serif);font-size:17px;line-height:1.7}
-.doc ul{padding-left:22px}
-.doc li{margin-bottom:10px}
-.doc a{text-decoration:none}
-.doc a:hover{text-decoration:underline}
-.social-links{display:flex;gap:14px;margin:8px 0 16px}
-.social-links img{width:40px;height:40px;transition:transform .2s}
-.social-links img:hover{transform:scale(1.1)}
-footer{background:var(--card);border-top:3px solid var(--red);text-align:center;padding:20px;font-size:14px;color:var(--muted)}
-footer a{color:var(--red)}
-@media (max-width:768px){
-nav{display:none;flex-direction:column;position:absolute;top:100%;right:0;background:var(--card);border:1px solid var(--line);border-radius:6px;width:210px;padding:8px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
-nav.active{display:flex}
-.hamburger{display:flex}
-.hamburger.active .bar:nth-child(1){transform:rotate(-45deg) translate(-5px,6px)}
-.hamburger.active .bar:nth-child(2){opacity:0}
-.hamburger.active .bar:nth-child(3){transform:rotate(45deg) translate(-5px,-6px)}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gooreplix - Berita yang Bikin Ramai</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==================================================
+   VARIABEL & RESET
+================================================== */
+:root {
+  --bg: #fff;
+  --ink: #161616;
+  --mute: #5d5d58;
+  --line: #ead9d9;
+  --card: #fff;
+  --red: #d90f1e;
+  --hl: #ffc9c9;
+  --on-red: #fff;
+  --page: #f3f3f3;           /* latar isi, sedikit keabuan */
+  --sans: 'Bricolage Grotesque', Arial, sans-serif;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --pad: clamp(16px, 2.5vw, 36px);
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-.hero{display:flex;flex-direction:column;align-items:flex-start;padding:8px 0 4px}
-.age{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--red);border:2px solid var(--red);border-radius:999px;padding:2px 12px;margin-bottom:14px}
-.masthead-title{font-size:clamp(40px,8vw,72px);line-height:1.05;margin:0 0 10px}
-.deck{font-size:clamp(17px,2.2vw,20px);margin:0 0 24px}
-.trending{display:flex;flex-wrap:wrap;gap:8px 28px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--red);border-radius:4px;padding:14px 20px;margin:0 0 36px;font-size:15px}
-.trending a{font-weight:700}
-.sec-title{font-family:var(--serif);font-size:22px;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-.sections{gap:20px}
-.category{position:relative;border-left:1px solid var(--line);border-top:6px solid var(--red);padding:26px;transition:transform .2s,box-shadow .2s,border-color .2s}
-.category:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.18);border-color:var(--red)}
-.cat-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-.category img{width:48px;margin:0}
-.category h2{font-family:var(--serif);font-size:32px;line-height:1.1;margin:0}
-.category h2 a{color:var(--ink);text-decoration:none}
-.category h2 a::after{content:'';position:absolute;inset:0}
-.category .w{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:800;border-radius:3px;padding:2px 8px;margin:0 0 10px}
-.category p.t{color:var(--muted);margin:0 0 22px}
-.category .read-more{position:relative;width:100%;text-align:center;padding:12px 18px}
-.ad-slot{margin:12px 0 0;text-align:center;min-height:0}
-.ad-slot small{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
-.contact-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 28px;margin:24px 0 0;padding:18px 24px}
-.contact-box h2{font-size:20px;margin:0}
-.contact-box .social-links-text{display:flex;flex-wrap:wrap;gap:4px 28px}
-.contact-box p{margin:0}
-@media (max-width:768px){main{padding:24px 16px}.category{padding:20px}.contact-box{margin-top:18px}}
+:root[data-theme="dark"] {
+  --bg: #140b0c;
+  --ink: #f6eeee;
+  --mute: #b3a2a3;
+  --line: #3a2224;
+  --card: #261719;
+  --red: #ff4d55;
+  --hl: #7a1118;
+  --on-red: #1a0003;
+  --page: #1b1415;
+}
 
-/* Goreplix shared header contrast: dark header for logo visibility */
-header{background:#111318 !important;border-bottom:3px solid var(--red)}
-header nav a{color:#f4f5f7 !important}
-header nav a:hover{background:var(--red);color:#fff !important}
-header .hamburger .bar{background:var(--red)}
-/* Mobile dropdown: keep contrast with the dark header */
-@media (max-width:768px){
-  header nav{background:#111318!important;border-color:#353943!important}
-  header nav a{color:#f4f5f7!important}
-  header nav a:hover,header nav a:focus-visible,header nav a[aria-current="page"]{background:var(--red)!important;color:#fff!important}
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* supaya tautan #grid tidak tertutup header */
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.6;
+  transition: background .2s, color .2s;
+}
+
+a { color: inherit; }
+button, input { font: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+/* ==================================================
+   HEADER (satu baris)
+================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: transform .28s ease;
+  border-bottom: 2px solid var(--ink);
+  background: var(--bg);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 125px;
+  object-fit: contain;
+}
+
+.cats {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cats button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font: 500 12px var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+.theme {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme svg { display: block; }
+.theme .icon-sun { display: none; }
+:root[data-theme="dark"] .theme .icon-sun { display: block; }
+:root[data-theme="dark"] .theme .icon-moon { display: none; }
+
+.cats button[aria-pressed="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--on-red);
+}
+
+header input[type="search"] {
+  flex: 0 1 160px;
+  width: 160px;
+  min-width: 110px;
+  max-width: 180px;
+  font: 400 14px var(--sans);
+  padding: 8px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 99px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+.ig {
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+}
+
+.ig svg { display: block; }
+
+.ig:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* Header disembunyikan saat scroll ke bawah, muncul lagi saat scroll ke atas */
+header.header-hidden { transform: translateY(-100%); }
+
+/* Menu: di desktop elemen anaknya ikut baris header */
+.menu { display: contents; }
+
+.burger {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.burger { position: relative; }
+
+.burger svg {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: block;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+.burger .icon-close { opacity: 0; transform: rotate(-90deg) scale(.6); }
+
+.burger[aria-expanded="true"] .icon-open { opacity: 0; transform: rotate(90deg) scale(.6); }
+.burger[aria-expanded="true"] .icon-close { opacity: 1; transform: none; }
+
+/* ==================================================
+   DISCLAIMER BERJALAN
+================================================== */
+.ticker {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--red);
+  color: var(--on-red);
+  padding: 10px 0;
+  font: 500 13px var(--sans);
+}
+
+.disclaimer-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: run-disclaimer 42s linear infinite;
+}
+
+.disclaimer-text a {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.disclaimer-text a:hover { opacity: .8; }
+
+.ticker:hover .disclaimer-text { animation-play-state: paused; }
+
+@keyframes run-disclaimer {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ==================================================
+   KONTEN UTAMA
+================================================== */
+main.wrap {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 22px;
+  margin-bottom: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+}
+
+.lead h2 {
+  font: 800 clamp(30px, 5.4vw, 54px)/1.02 var(--sans);
+  letter-spacing: -.035em;
+  margin: 8px 0 14px;
+  cursor: pointer;
+}
+
+.lead h2:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: var(--hl);
+}
+
+.lead p {
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+
+.cover {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  font: 800 clamp(36px, 7vw, 70px)/.9 var(--sans);
+  letter-spacing: -.06em;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 25%, rgba(0,0,0,.7));
+  z-index: -1;
+}
+
+.cover span {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+}
+
+.meta {
+  font: 500 13px var(--sans);
+  color: var(--mute);
+}
+
+.tag {
+  font: 800 13px var(--sans);
+  color: var(--red);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+  border-radius: 14px;
+  padding: 12px 12px 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+  cursor: pointer;
+  min-width: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: var(--line);
+}
+
+.item h3 {
+  font: 800 22px/1.15 var(--sans);
+  letter-spacing: -.02em;
+  margin: 6px 0 8px;
+}
+
+.item:hover h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--hl);
+  text-decoration-thickness: 3px;
+}
+
+.item p {
+  margin: 0 0 8px;
+  color: var(--mute);
+  font-size: 16px;
+}
+
+.empty {
+  padding: 40px 0;
+  font: 500 17px var(--sans);
+  color: var(--mute);
+}
+
+/* ==================================================
+   AJAKAN INSTAGRAM
+================================================== */
+.follow {
+  margin: 44px 0 0;
+  background: var(--red);
+  color: var(--on-red);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.follow h2 {
+  font: 800 28px/1.05 var(--sans);
+  letter-spacing: -.03em;
+  margin: 0 0 4px;
+}
+
+.follow p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.follow a {
+  display: inline-block;
+  font: 800 15px var(--sans);
+  background: var(--on-red);
+  color: var(--red);
+  padding: 12px 20px;
+  border-radius: 99px;
+  text-decoration: none;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+footer.site-footer {
+  margin-top: 64px;
+  border-top: 2px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.footer-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 42px var(--pad);
+  display: grid;
+  grid-template-columns: 1.2fr .7fr 1fr;
+  gap: 40px;
+}
+
+.footer-logo {
+  font: 800 34px/1 var(--sans);
+  letter-spacing: -.05em;
+  text-decoration: none;
+}
+
+.footer-logo span { color: var(--red); }
+
+.footer-brand p,
+.footer-about p {
+  max-width: 300px;
+  margin: 14px 0 0;
+  color: var(--mute);
+  font: 400 15px/1.7 var(--serif);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.footer-links h3,
+.footer-about h3 {
+  margin: 0 0 8px;
+  font: 800 15px/1.4 var(--sans);
+}
+
+.footer-links a {
+  color: var(--mute);
+  font: 500 14px/1.5 var(--sans);
+  text-decoration: none;
+}
+
+.footer-links a:hover { color: var(--red); }
+
+.footer-bottom {
+  width: 100%;
+  margin: 0 auto;
+  padding: 18px var(--pad) 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--mute);
+  font: 400 12px/1.6 var(--sans);
+}
+
+/* ==================================================
+   POP-UP ARTIKEL
+================================================== */
+dialog {
+  border: none;
+  border-radius: 16px;
+  max-width: 680px;
+  width: calc(100% - 28px);
+  max-height: 88vh;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+dialog::backdrop { background: rgba(0,0,0,.6); }
+
+.art {
+  padding: 28px 26px 32px;
+  overflow-wrap: anywhere;
+}
+
+.article-image {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 18px 0;
+}
+
+.art h2 {
+  font: 800 clamp(28px, 5vw, 40px)/1.05 var(--sans);
+  letter-spacing: -.035em;
+  margin: 8px 0 12px;
+}
+
+.art p {
+  font-size: 18px;
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+
+.vid {
+  display: inline-block;
+  font: 800 15px var(--sans);
+  background: var(--red);
+  color: var(--on-red);
+  padding: 12px 22px;
+  border-radius: 99px;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.vid:hover { opacity: .9; }
+
+.close {
+  float: right;
+  font: 500 14px var(--sans);
+  background: none;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+  border-radius: 99px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+@media (max-width: 860px) {
+  .lead { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-inner { gap: 24px; }
+}
+
+/* HP: logo + tema + Instagram + hamburger.
+   Kategori dan pencarian masuk ke dropdown. */
+@media (max-width: 760px) {
+  .top {
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .logo { margin-right: auto; }
+  .ig { margin-left: 0; }
+
+  .logo img {
+    height: 34px;
+    max-width: 120px;
+  }
+
+  .ig,
+  .theme,
+  .burger {
+    width: 38px;
+    height: 38px;
+  }
+
+  .burger { display: inline-flex; }
+
+  /* Dropdown */
+  .menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px var(--pad) 18px;
+    background: var(--bg);
+    border-bottom: 2px solid var(--ink);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, .18);
+
+    /* tertutup: tersembunyi, sedikit naik */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition:
+      opacity .22s ease,
+      transform .22s ease,
+      visibility 0s linear .22s;
+  }
+
+  .menu.open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  /* isi menu muncul berurutan */
+  .menu > * {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .menu.open > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  .menu.open > input[type="search"] { transition-delay: .05s; }
+  .menu.open > .cats { transition-delay: .1s; }
+
+  .menu input[type="search"] {
+    order: 1;
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 11px 16px;
+    font-size: 16px;
+  }
+
+  .menu .cats {
+    order: 2;
+    flex: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .menu .cats button {
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .footer-brand,
+  .footer-about { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  main.wrap { padding-top: 18px; }
+  .grid { grid-template-columns: 1fr; }
+  .follow { padding: 22px; }
+  .follow h2 { font-size: 25px; }
+  .follow a { width: 100%; text-align: center; }
+  .lead { gap: 18px; padding: 16px; margin-bottom: 18px; }
+  .lead p { font-size: 17px; }
+  .art { padding: 22px 18px 26px; }
+  .vid { display: block; text-align: center; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .ticker { font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand,
+  .footer-about { grid-column: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disclaimer-text {
+    animation: none;
+    padding-left: 16px;
+    white-space: normal;
+  }
+
+  .ticker { white-space: normal; }
+
+  header,
+  .item,
+  .menu,
+  .menu > *,
+  .burger svg {
+    transition: none !important;
+  }
 }
 </style>
-    <script src="https://pl28818095.profitableratecpmnetwork.com/08/69/5b/08695b6a66660a6bae4dcc925f06c1ff.js"></script>
-    <script src="https://pl28818102.profitableratecpmnetwork.com/80/82/95/8082954a08f8f4df4f8a24faa1e53509.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9720534134367071"
-        crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <header>
-        <div class="bar-wrap">
-            <img src="images/logo.gif" alt="Logo" class="logo">
-            <div class="hamburger" id="hamburger" onclick="toggleNav(this)" aria-label="Menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <nav id="nav">
-                <a href="./darkness">Darkness</a>
-                <a href="./incident">Incident</a>
-                <a href="./contact">Kontak</a>
-            </nav>
-        </div>
-    </header>
+<!-- ==================================================
+     HEADER
+================================================== -->
+<header>
+  <div class="wrap">
+    <div class="top">
 
-    <div class="notice">
-        <p>DISCLAIMER: Konten yang ditampilkan di situs ini bersumber dari berbagai tempat di internet dan media sosial. Jika Anda menemukan konten yang menurut Anda melanggar privasi, hak cipta, atau ingin dihapus karena alasan lain, jangan ragu untuk <a href="https://instagram.com/goreplix">MENGHUBUNGI KAMI.</a> Kami akan segera menindaklanjuti permintaan Anda.</p>
+      <a href="#" class="logo" aria-label="Gooreplix Beranda">
+        <img src="images/logo.png" alt="Gooreplix">
+      </a>
+
+      <!-- Menu: di desktop tampil sebaris, di HP jadi dropdown -->
+      <div class="menu" id="menu">
+        <div class="cats" id="cats" role="group" aria-label="Kategori"></div>
+        <input type="search" id="q" placeholder="Cari berita" aria-label="Cari berita">
+      </div>
+
+      <button class="theme" id="theme" type="button" aria-label="Ganti mode gelap/terang" title="Gelap/Terang">
+        <!-- Bulan: tampil saat mode terang -->
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+        <!-- Matahari: tampil saat mode gelap -->
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+
+      <a class="ig" href="https://instagram.com/gooreplix" target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram Gooreplix" title="Instagram @gooreplix">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </a>
+
+      <!-- HAMBURGER (hanya tampil di HP) -->
+      <button class="burger" id="burger" type="button"
+              aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
+        <svg class="icon-open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- DISCLAIMER BERJALAN -->
+<div class="ticker" aria-label="Disclaimer">
+  <span class="disclaimer-text">
+    DISCLAIMER: Konten yang ditampilkan di situs ini bersumber dari berbagai tempat di internet dan media sosial.
+    Jika Anda menemukan konten yang menurut Anda melanggar privasi, hak cipta, atau ingin dihapus karena alasan lain,
+    silakan <a href="https://instagram.com/gooreplix" target="_blank" rel="noopener noreferrer">HUBUNGI KAMI.</a>
+    Kami akan menindaklanjuti permintaan Anda.
+  </span>
+</div>
+
+<!-- ==================================================
+     KONTEN UTAMA
+================================================== -->
+<main class="wrap">
+  <div id="lead"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty" hidden>
+    Tidak ada konten yang cocok. Coba kata kunci lain atau pilih kategori berbeda.
+  </div>
+
+  <section class="follow">
+    <div>
+      <h2>Ikuti Gooreplix di Instagram</h2>
+      <p>Ringkasan berita dan konten terbaru ada di @gooreplix.</p>
+    </div>
+    <a href="https://instagram.com/gooreplix" target="_blank" rel="noopener noreferrer">Buka Instagram</a>
+  </section>
+</main>
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">Gooreplix<span>.</span></a>
+      <p>berita yang bikin ramai.<br>cepat, aktual, dan dekat dengan kamu.</p>
     </div>
 
-    <main>
-        <section class="hero">
-            <span class="age">Khusus 18+</span>
-            <h1 class="masthead-title">Goreplix</h1>
-            <p class="deck">Arsip kejadian dan informasi yang dikurasi dari internet dan media sosial. Khusus pembaca berusia 18 tahun ke atas.</p>
-        </section>
+    <nav class="footer-links" aria-label="Navigasi footer">
+      <h3>Jelajahi</h3>
+      <a href="#">Beranda</a>
+      <a href="#grid">Konten terbaru</a>
+      <a href="https://instagram.com/gooreplix" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </nav>
 
-        <div class="trending">
-            <span>Lihat juga: <a href="https://www.profitableratecpmnetwork.com/ur7b9xzt?key=dbcae5f60b6d5cbc27b0952a618d42f9">yang lagi viral</a></span>
-            <span>Bonus video: <a href="https://www.profitableratecpmnetwork.com/ur7b9xzt?key=dbcae5f60b6d5cbc27b0952a618d42f9">lihat disini</a></span>
-        </div>
+    <div class="footer-about">
+      <h3>Tentang Gooreplix</h3>
+      <p>Ruang untuk mengikuti berita, kisah, dan insiden yang sedang ramai diperbincangkan.</p>
+    </div>
+  </div>
 
-        <h2 class="sec-title">Pilih kategori</h2>
-        <section class="sections category-options">
-            <div class="category" id="18+">
-                <div class="cat-head">
-                    <img src="images/warninglogo.png" alt="Viral 18+">
-                    <h2><a href="./darkness">Darkness</a></h2>
-                </div>
-                <span class="w">WARNING !</span>
-                <p class="t">Konten didalam sini mengandung gambar dan informasi yang mungkin mengganggu bagi sebagian orang. <strong>Hanya untuk pengguna berusia 18 tahun ke atas.</strong></p>
-                <a href="./darkness" class="read-more">KLIK DISINI</a>
-            </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gooreplix. Semua hak dilindungi.</span>
+    <span>Dibuat untuk mengikuti riuhnya dunia.</span>
+  </div>
+</footer>
 
-            <div class="category" id="gosip">
-                <div class="cat-head">
-                    <img src="images/warninglogo.png" alt="Gosip Terbaru">
-                    <h2><a href="./incident">Incident</a></h2>
-                </div>
-                <span class="w">WARNING !</span>
-                <p class="t">Konten didalam sini mengandung gambar dan informasi yang mungkin mengganggu bagi sebagian orang. <strong>Hanya untuk pengguna berusia 18 tahun ke atas.</strong></p>
-                <a href="./incident" class="read-more">KLIK DISINI</a>
-            </div>
-        </section>
+<dialog id="dlg">
+  <div class="art" id="art"></div>
+</dialog>
 
-        <div class="contact-box" id="kontak">
-            <h2>Kontak Kami</h2>
-            <div class="social-links-text">
-                <p>Instagram : goreplix</p>
-                <p>Gmail : goreplix@gmail.com</p>
-            </div>
-        </div>
-    </main>
+<script>
+/* ==================================================
+   DATA ARTIKEL
+   Isi "url" dengan URL video masing-masing artikel.
+   Tombol "Lihat video disini" selalu tampil. Kalau "url"
+   masih kosong (""), tombol mengarah ke Instagram (FALLBACK_LINK).
+================================================== */
+const A = [
 
-    <footer>
-        <div>
-            &copy; 2024 Goreplix. Semua hak dilindungi. | <a href="./tou">Terms of Use</a>
-        </div>
-    </footer>
-    <script>
-        function toggleNav(element) {
-            const nav = document.getElementById('nav');
-            nav.classList.toggle('active');
-            element.classList.toggle('active');
-        }
-        document.addEventListener('click', function(event) {
-            const nav = document.getElementById('nav');
-            const hamburger = document.getElementById('hamburger');
-            if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-    </script>
+  // ==================================================
+  // KATEGORI: BERITA
+  // ==================================================
+  {
+    c: "Berita",
+    img: "images/berita1.jpg",
+    t: "Jam masuk kantor digeser, komuter Jabodetabek mulai coba pola baru",
+    d: "Sejumlah perusahaan menguji jam kerja fleksibel untuk mengurai kemacetan pagi.",
+    h: "25 Oktober 2026",
+    b: [
+      "Beberapa perusahaan di Jabodetabek mulai menggeser jam masuk kantor untuk mengurangi kepadatan di jam sibuk.",
+      "Pekerja memiliki pengalaman yang beragam terhadap perubahan jam kerja tersebut.",
+      "Hasil evaluasi uji coba akan menjadi bahan pertimbangan untuk kebijakan selanjutnya."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita2.jpg",
+    t: "Aplikasi pesan baru janjikan enkripsi bawaan, pengguna diminta tetap waspada",
+    d: "Fitur keamanan jadi alasan utama, tetapi kebijakan privasi tetap perlu diperiksa.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sebuah aplikasi pesan menawarkan enkripsi untuk melindungi percakapan pengguna.",
+      "Keamanan digital tidak hanya bergantung pada enkripsi, tetapi juga pada pengelolaan data.",
+      "Pengguna disarankan membaca kebijakan privasi dan mengaktifkan verifikasi dua langkah."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita3.jpg",
+    t: "Warung kopi pinggir jalan ramai lagi, anak muda cari tempat nongkrong murah",
+    d: "Harga terjangkau dan suasana santai membuat warung kopi jadi pilihan.",
+    h: "25 Oktober 2026",
+    b: [
+      "Warung kopi sederhana menjadi salah satu tempat berkumpul anak muda.",
+      "Pelanggan datang untuk bertemu teman, bersantai, maupun bekerja.",
+      "Sejumlah pemilik warung mulai menyediakan fasilitas tambahan untuk pelanggan."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita4.jpg",
+    t: "Turnamen futsal antar-kampus menarik perhatian peserta",
+    d: "Kompetisi olahraga menjadi ajang bertemu dan berkompetisi antarmahasiswa.",
+    h: "25 Oktober 2026",
+    b: [
+      "Turnamen futsal antarkampus mempertemukan tim dari berbagai wilayah.",
+      "Panitia menyiapkan pertandingan dan fasilitas untuk peserta serta penonton.",
+      "Informasi jadwal pertandingan diumumkan melalui kanal penyelenggara."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita5.jpg",
+    t: "Harga bahan pangan menjadi perhatian warga",
+    d: "Warga membandingkan harga kebutuhan pokok di sejumlah pasar.",
+    h: "25 Oktober 2026",
+    b: [
+      "Harga bahan pangan dapat berubah mengikuti pasokan dan permintaan.",
+      "Pedagang menyesuaikan stok dengan kondisi distribusi.",
+      "Warga dapat membandingkan harga di beberapa tempat sebelum berbelanja."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita6.jpg",
+    t: "Game buatan studio lokal menarik perhatian pemain",
+    d: "Karya pengembang lokal memperlihatkan perkembangan industri gim.",
+    h: "25 Oktober 2026",
+    b: [
+      "Gim buatan pengembang lokal terus mendapat perhatian dari para pemain.",
+      "Tim pengembang mengembangkan fitur dan konten berdasarkan proses produksi mereka.",
+      "Pembaruan berikutnya dapat dipantau melalui kanal resmi pengembang."
+    ],
+    url: ""
+  },
+  {
+    c: "Berita",
+    img: "images/berita7.jpg",
+    t: "Komunitas bersepeda membuka kegiatan untuk pemula",
+    d: "Kegiatan bersama mengajak warga berolahraga dan mengenal rute yang aman.",
+    h: "25 Oktober 2026",
+    b: [
+      "Komunitas bersepeda mengadakan kegiatan untuk orang yang baru mulai bersepeda.",
+      "Peserta dapat mempelajari dasar keselamatan dan perencanaan rute.",
+      "Informasi kegiatan tersedia melalui media sosial komunitas."
+    ],
+    url: ""
+  },
+
+  // ==================================================
+  // KATEGORI: DARKNESS (18+)
+  // ==================================================
+  {
+    c: "Darkness (18+)",
+    img: "images/dark55.jpeg",
+    t: "Penyerangan di Pusat Perbelanjaan Hong Kong",
+    d: "Dua perempuan meninggal dalam insiden penyerangan di sebuah pusat perbelanjaan Hong Kong. Polisi menyelidiki hubungan antara korban, tersangka, dan motif kejadian.",
+    h: "25 Oktober 2026",
+    b: [
+      "Insiden tersebut terjadi di sebuah pusat perbelanjaan di Hong Kong.",
+      "Penyelidikan awal berfokus pada kronologi kejadian dan kemungkinan hubungan antara pihak yang terlibat."
+    ],
+    url: "https://pastelink.net/2nwsm1mb"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark54.jpeg",
+    t: "Penyerangan terhadap Pelari di Vietnam",
+    d: "Sebuah insiden kekerasan yang melibatkan sekelompok remaja dilaporkan terjadi di Long Xuyen, Provinsi An Giang, Vietnam.",
+    h: "25 Oktober 2026",
+    b: [
+      "Kejadian tersebut dilaporkan berlangsung pada dini hari dan terekam kamera keamanan.",
+      "Informasi dalam arsip lama menyebutkan adanya dugaan konflik antarkelompok."
+    ],
+    url: "https://pastelink.net/d6y0vm0h"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark53.jpeg",
+    t: "Kasus Kekerasan di Vietnam",
+    d: "Arsip lama mencantumkan sebuah kasus kekerasan di Vietnam, tetapi tidak menyertakan kronologi lengkap.",
+    h: "25 Oktober 2026",
+    b: ["Informasi tambahan mengenai waktu, lokasi spesifik, dan perkembangan penyelidikan belum tersedia dalam sumber."],
+    url: "https://pomf2.lain.la/f/bx8p3n2w.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark52.jpeg",
+    t: "Kasus Pembunuhan Menggunakan Senjata Tajam",
+    d: "Arsip lama memuat laporan mengenai kasus pembunuhan, tetapi tidak memberikan keterangan terperinci tentang waktu dan lokasi.",
+    h: "25 Oktober 2026",
+    b: ["Kronologi dan informasi resmi lebih lanjut tidak tersedia dalam sumber yang diberikan."],
+    url: "https://pomf2.lain.la/f/4ia35322.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark51.jpeg",
+    t: "Kasus Kekerasan dalam Rumah Tangga di Brasil",
+    d: "Seorang perempuan meninggal dalam kasus kekerasan rumah tangga di Confresa, Brasil. Pihak kepolisian melakukan penyelidikan terhadap tersangka.",
+    h: "25 Oktober 2026",
+    b: [
+      "Peristiwa tersebut dilaporkan terjadi di lingkungan Morada Nova, Confresa.",
+      "Informasi arsip menyebutkan bahwa pihak berwenang melakukan pencarian dan penyelidikan."
+    ],
+    url: "https://pastelink.net/la42acyg"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark50.jpeg",
+    t: "Penembakan Pasien di Rumah Sakit Brasil",
+    d: "Seorang pasien berusia 37 tahun meninggal setelah diserang di area Rumah Sakit Santo Amaro, Guarujá, Brasil.",
+    h: "25 Oktober 2026",
+    b: [
+      "Peristiwa dilaporkan terjadi ketika pasien hendak meninggalkan rumah sakit.",
+      "Rekaman kamera pengawas menjadi bagian dari informasi yang disebutkan dalam laporan awal."
+    ],
+    url: "https://videy.co/v?id=6DGDdiFx1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark49.jpeg",
+    t: "Insiden Penembakan terhadap Terduga Pencuri",
+    d: "Arsip lama mencantumkan insiden penembakan terhadap seseorang yang diduga melakukan pencurian.",
+    h: "25 Oktober 2026",
+    b: ["Keterangan mengenai lokasi, kronologi, dan kondisi korban tidak tersedia dalam sumber."],
+    url: "https://videy.co/v?id=iWg3ghyU1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark48.jpeg",
+    t: "Kasus Pembunuhan di Delhi, India",
+    d: "Seorang pria ditangkap di Delhi, India, dalam penyelidikan kasus kematian istrinya.",
+    h: "25 Oktober 2026",
+    b: [
+      "Kasus tersebut ditangani oleh kepolisian setempat.",
+      "Sumber lama menyebutkan adanya konflik dalam hubungan rumah tangga, tetapi rincian tersebut belum diverifikasi secara independen."
+    ],
+    url: "https://pastelink.net/icwpros0"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark47.jpeg",
+    t: "Insiden Penembakan di Meksiko",
+    d: "Arsip lama mencantumkan laporan penembakan yang diduga melibatkan kelompok kriminal di Meksiko.",
+    h: "25 Oktober 2026",
+    b: ["Informasi lebih lanjut mengenai lokasi dan kronologi kejadian tidak tersedia."],
+    url: "https://videy.co/v?id=4xDAN5BJ1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark46.jpeg",
+    t: "Laporan Eksekusi oleh Tentara",
+    d: "Arsip lama memuat rekaman yang dikaitkan dengan dugaan eksekusi oleh personel bersenjata.",
+    h: "25 Oktober 2026",
+    b: ["Sumber yang diberikan tidak memuat informasi yang cukup untuk memastikan waktu, lokasi, maupun konteks rekaman."],
+    url: "https://videy.co/v?id=BO0Rj3Z31"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark45.jpeg",
+    t: "Insiden Penembakan di Dekat Anak",
+    d: "Arsip lama mencantumkan sebuah insiden penembakan yang melibatkan seorang perempuan.",
+    h: "25 Oktober 2026",
+    b: ["Kronologi dan informasi resmi mengenai kejadian tersebut tidak tersedia dalam sumber."],
+    url: "https://pomf2.lain.la/f/lhfq34g6.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark44.jpeg",
+    t: "Insiden Kekerasan di Kolombia",
+    d: "Sebuah insiden kekerasan dilaporkan terjadi di El Carmen de Viboral, Antioquia, Kolombia, pada Januari 2025.",
+    h: "25 Oktober 2026",
+    b: [
+      "Menurut materi arsip, kejadian tersebut terekam kamera keamanan pada pagi hari.",
+      "Pihak berwenang disebut melakukan penyelidikan untuk menentukan kronologi dan motif kejadian."
+    ],
+    url: "https://videy.co/v?id=WI8D43XS1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark43.jpeg",
+    t: "Kongo Memindahkan Narapidana Hukuman Mati",
+    d: "Otoritas Republik Demokratik Kongo dilaporkan memindahkan lebih dari 170 narapidana ke sebuah penjara dengan keamanan tinggi.",
+    h: "25 Oktober 2026",
+    b: [
+      "Laporan menyebutkan bahwa para narapidana tersebut telah dijatuhi hukuman dalam berbagai perkara kriminal.",
+      "Kebijakan hukuman mati tersebut menuai perdebatan terkait keamanan, proses peradilan, dan hak asasi manusia."
+    ],
+    url: "https://pastelink.net/bpd2byo3"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark40.jpeg",
+    t: "Kasus Pembunuhan yang Melibatkan Mantan Pasangan",
+    d: "Arsip lama memuat laporan kasus pembunuhan di Brasil yang melibatkan pasangan yang telah berpisah.",
+    h: "25 Oktober 2026",
+    b: [
+      "Menurut materi yang diberikan, tersangka menyerahkan diri kepada polisi.",
+      "Pihak keluarga dan kuasa hukum menyampaikan keterangan berbeda mengenai konflik yang mendahului kejadian."
+    ],
+    url: "https://pastelink.net/kiepmmbt"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark39.jpeg",
+    t: "Dugaan Penculikan oleh Kelompok Kriminal di Meksiko",
+    d: "Arsip lama mengaitkan sebuah kasus penahanan seseorang dengan kelompok kriminal yang beroperasi di wilayah Sinaloa, Meksiko.",
+    h: "25 Oktober 2026",
+    b: ["Materi tersebut menyebut adanya rekaman interogasi, tetapi tidak memberikan informasi lengkap mengenai hasil penyelidikan."],
+    url: "https://videy.co/v?id=pjJdveOy1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark38.jpeg",
+    t: "Kasus Penganiayaan dengan Palu",
+    d: "Arsip lama mencantumkan kasus penganiayaan berat yang disebut terjadi akibat serangan menggunakan benda tumpul.",
+    h: "25 Oktober 2026",
+    b: ["Informasi mengenai lokasi, waktu, dan perkembangan kasus belum tersedia dalam sumber."],
+    url: "https://videy.co/v?id=F2za8DEG1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark37.jpeg",
+    t: "Dugaan Pembunuhan terkait Perselisihan Antarkelompok",
+    d: "Seorang pemuda di Salvador, Brasil, dilaporkan menjadi korban kekerasan setelah sebuah video di pesta menarik perhatian kelompok yang berselisih.",
+    h: "25 Oktober 2026",
+    b: [
+      "Materi lama menyebut adanya dugaan konflik antarkelompok.",
+      "Pihak berwenang dikabarkan menyelidiki keterlibatan kelompok yang disebut dalam laporan."
+    ],
+    url: "https://qu.ax/xFaeL.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark36.jpeg",
+    t: "Kasus Pembunuhan di Kabupaten Kakamega, Kenya",
+    d: "Kepolisian Kenya dilaporkan menangkap beberapa orang dalam penyelidikan kasus pembunuhan yang berkaitan dengan dugaan pencurian ayam.",
+    h: "25 Oktober 2026",
+    b: [
+      "Menurut materi yang diberikan, penyelidik menggunakan rekaman video sebagai bagian dari penyelidikan.",
+      "Sejumlah orang disebut ditahan untuk membantu proses hukum."
+    ],
+    url: "https://qu.ax/lwhfS.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark35.jpeg",
+    t: "Laporan Eksekusi oleh ISIS",
+    d: "Arsip lama mencantumkan materi yang dikaitkan dengan kelompok ISIS, tetapi tidak menyertakan rincian kejadian.",
+    h: "25 Oktober 2026",
+    b: ["Waktu, lokasi, dan konteks materi tidak dapat dipastikan dari sumber yang diberikan."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark34.jpeg",
+    t: "Guru dan Aktivis Muda Myanmar Dijatuhi Hukuman",
+    d: "Thae Su Naing, seorang mantan pemimpin mahasiswa dan guru di Myanmar, dilaporkan dijatuhi hukuman penjara berdasarkan undang-undang antiterorisme.",
+    h: "25 Oktober 2026",
+    b: [
+      "Materi lama menyebut bahwa ia pernah aktif dalam gerakan mahasiswa dan gerakan pembangkangan sipil.",
+      "Keluarga dan koleganya mempertanyakan hukuman tersebut serta menyampaikan kekhawatiran mengenai kondisi penahanannya."
+    ],
+    url: "https://videy.co/v?id=xVEqw4Mq1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark33.jpeg",
+    t: "Dokumentasi di Balik Rekaman Eksekusi",
+    d: "Arsip lama mencantumkan materi terkait rekaman eksekusi tahanan tanpa keterangan tambahan.",
+    h: "25 Oktober 2026",
+    b: ["Sumber tidak menyertakan informasi yang cukup untuk memastikan konteks maupun keaslian rekaman."],
+    url: "https://videy.co/v?id=J35y739i1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark32.jpeg",
+    t: "Konflik Antarkelompok Kriminal di Meksiko",
+    d: "Arsip lama mengaitkan sebuah kejadian dengan perseteruan antara kelompok kriminal di Meksiko.",
+    h: "25 Oktober 2026",
+    b: ["Informasi mengenai kronologi dan hasil penyelidikan tidak tersedia dalam sumber."],
+    url: "https://videy.co/v?id=TNRLBwtB1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark31.jpeg",
+    t: "Laporan Pembunuhan Politisi di Ceará, Brasil",
+    d: "Arsip lama mencantumkan laporan tentang pembunuhan seorang politisi di negara bagian Ceará, Brasil.",
+    h: "25 Oktober 2026",
+    b: ["Keterangan mengenai identitas korban, motif, dan perkembangan kasus tidak tersedia dalam materi."],
+    url: "https://videy.co/v?id=upaHkRzU1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark30.jpeg",
+    t: "Laporan Insiden Penusukan",
+    d: "Arsip lama mencantumkan sebuah kasus penusukan tanpa keterangan tambahan.",
+    h: "25 Oktober 2026",
+    b: ["Lokasi, waktu, dan kronologi kejadian belum tersedia dalam sumber."],
+    url: "https://videy.co/v?id=SrCYA8L81"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark29.jpeg",
+    t: "Kasus Pembunuhan Sopir Taksi",
+    d: "Arsip lama mencantumkan kasus pembunuhan yang melibatkan seorang sopir taksi.",
+    h: "25 Oktober 2026",
+    b: ["Tidak terdapat keterangan tambahan mengenai lokasi maupun perkembangan penyelidikan."],
+    url: "https://videy.co/v?id=lOO1xAlR1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark28.jpeg",
+    t: "Laporan Eksekusi",
+    d: "Materi arsip lama memuat rekaman yang disebut berkaitan dengan eksekusi, tanpa informasi lokasi maupun latar kejadian.",
+    h: "25 Oktober 2026",
+    b: ["Konteks dan keaslian rekaman belum dapat dipastikan dari sumber."],
+    url: "https://videy.co/v?id=YH9mebg71"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark27.jpeg",
+    t: "Laporan Eksekusi oleh ISIS",
+    d: "Arsip lama mengaitkan sebuah rekaman dengan kelompok ISIS dan dugaan keterlibatan seorang anggota berusia muda.",
+    h: "25 Oktober 2026",
+    b: ["Sumber tidak menyertakan informasi yang cukup untuk memverifikasi konteks rekaman."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark26.jpeg",
+    t: "Kompilasi Insiden Kekerasan dari Berbagai Negara",
+    d: "Arsip lama mencantumkan sebuah kompilasi rekaman insiden kekerasan dari sejumlah lokasi.",
+    h: "25 Oktober 2026",
+    b: ["Tidak tersedia rincian lokasi, tanggal, atau konteks setiap rekaman dalam materi yang diberikan."],
+    url: "https://pomf2.lain.la/f/voxtj8q.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark25.jpeg",
+    t: "Dugaan Konflik Kartel di Meksiko",
+    d: "Arsip lama mengaitkan sebuah rekaman dengan dugaan konflik antara kelompok kriminal di Meksiko.",
+    h: "25 Oktober 2026",
+    b: ["Tidak ada informasi terverifikasi tambahan mengenai waktu dan lokasi kejadian."],
+    url: "https://videy.co/v?id=7Tpxxslw1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark24.jpeg",
+    t: "Kasus Pembunuhan yang Melibatkan Mantan Pasangan",
+    d: "Arsip lama mencantumkan sebuah kasus pembunuhan di Lima, Peru, yang disebut melibatkan mantan pasangan.",
+    h: "25 Oktober 2026",
+    b: ["Informasi tambahan mengenai kronologi dan perkembangan perkara tidak tersedia dalam sumber."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark23.jpeg",
+    t: "Materi Eksekusi yang Dikaitkan dengan ISIS",
+    d: "Arsip lama mencantumkan materi yang dikaitkan dengan ISIS tanpa deskripsi kejadian.",
+    h: "25 Oktober 2026",
+    b: ["Lokasi dan waktu kejadian tidak dijelaskan dalam sumber."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark22.jpeg",
+    t: "Insiden Kekerasan terkait Dugaan Pembakaran Hutan",
+    d: "Arsip lama menyebut adanya serangan massa terhadap seseorang yang diduga terkait kebakaran hutan.",
+    h: "25 Oktober 2026",
+    b: ["Tidak ada informasi tambahan yang cukup untuk memastikan lokasi maupun proses hukum kasus tersebut."],
+    url: "https://videy.co/v?id=AlkvnVKY1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark21.jpeg",
+    t: "Materi Eksekusi Tahanan",
+    d: "Arsip lama mencantumkan sebuah rekaman yang dikaitkan dengan eksekusi tahanan oleh ISIS.",
+    h: "25 Oktober 2026",
+    b: ["Kronologi dan konteks rekaman tidak dijelaskan dalam sumber."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark20.jpeg",
+    t: "Laporan Penganiayaan Berat",
+    d: "Arsip lama memuat laporan mengenai sebuah insiden penganiayaan.",
+    h: "25 Oktober 2026",
+    b: ["Tidak tersedia informasi mengenai waktu, lokasi, atau perkembangan kasus."],
+    url: "https://videy.co/v?id=bUbgUEmR1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark19.jpeg",
+    t: "Insiden Penembakan Petugas Keamanan",
+    d: "Arsip lama mencantumkan kasus penembakan yang melibatkan seorang petugas keamanan.",
+    h: "25 Oktober 2026",
+    b: ["Materi mengarahkan pembaca ke unggahan media sosial untuk informasi kronologi, tetapi detailnya tidak disertakan."],
+    url: "https://videy.co/v?id=VlNFeM1V1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark18.jpeg",
+    t: "El Siri",
+    d: "Arsip lama mencantumkan materi dengan judul El Siri tanpa keterangan kejadian.",
+    h: "25 Oktober 2026",
+    b: ["Informasi tambahan belum tersedia."],
+    url: "https://videy.co/v?id=6PlYfTCU1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark17.jpeg",
+    t: "Kasus Kematian Seorang Pemuda",
+    d: "Arsip lama mencantumkan kasus kematian seorang pemuda yang disebut sebagai tunawisma.",
+    h: "25 Oktober 2026",
+    b: ["Tidak ada informasi tambahan yang cukup untuk memastikan kronologi kejadian."],
+    url: "https://videy.co/v?id=IIUSCQQz1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark16.jpeg",
+    t: "Rekaman Penembak Jitu di Pakistan",
+    d: "Arsip lama mencantumkan rekaman yang dikaitkan dengan seorang penembak jitu di Pakistan.",
+    h: "25 Oktober 2026",
+    b: ["Informasi mengenai lokasi, waktu, dan konteks rekaman tidak tersedia."],
+    url: "https://dood.town/d/4silof25wwkt"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark15.jpeg",
+    t: "FUNKY TOWN V.1",
+    d: "Arsip lama mencantumkan materi berjudul FUNKY TOWN V.1 tanpa deskripsi tambahan.",
+    h: "25 Oktober 2026",
+    b: ["Konteks dan asal rekaman belum dijelaskan dalam sumber."],
+    url: "https://videy.co/v?id=SrqF6tPE"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark14.jpeg",
+    t: "Milisi Pro-Indonesia dan Pro-Timor Timur pada 1999",
+    d: "Arsip lama mengacu pada rekaman kerusuhan antara kelompok milisi pro-Indonesia dan pro-Timor Timur di Timor Leste pada 1999.",
+    h: "25 Oktober 2026",
+    b: ["Materi tersebut mengaitkan rekaman dengan konflik dan ketegangan politik pada periode tersebut."],
+    url: "https://videy.co/v?id=UDZ4gpiB1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark13.jpeg",
+    t: "Laporan Kekerasan oleh Kelompok Kriminal di Meksiko",
+    d: "Arsip lama mencantumkan materi yang dikaitkan dengan kelompok kriminal Los Zetas.",
+    h: "25 Oktober 2026",
+    b: ["Tidak tersedia deskripsi tambahan untuk memastikan konteks kejadian."],
+    url: "https://videy.co/v?id=Nt5F0QxZ1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark12.jpeg",
+    t: "Laporan Penusukan di Brasil",
+    d: "Arsip lama mencantumkan sebuah kasus penusukan di Brasil.",
+    h: "25 Oktober 2026",
+    b: ["Informasi lokasi spesifik, waktu, dan perkembangan kasus tidak tersedia."],
+    url: "https://pomf2.lain.la/f/38zl1wlz.mp4"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark11.jpeg",
+    t: "Konflik Antarkelompok di Pontianak pada 2000",
+    d: "Arsip lama mengaitkan sebuah konflik di Pontianak Timur dengan perselisihan antara sejumlah pemuda dan warga setempat.",
+    h: "25 Oktober 2026",
+    b: ["Materi menyebut adanya ketegangan antarkelompok, tetapi tidak memberikan kronologi lengkap atau sumber pendukung tambahan."],
+    url: "https://videy.co/v?id=qrpQ1vq71"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark10.jpeg",
+    t: "Kasus Pembunuhan di Pasar Induk Kramat Jati",
+    d: "Seorang pekerja kios buah di Pasar Induk Kramat Jati, Jakarta Timur, dilaporkan menjadi korban pembunuhan pada Januari 2024.",
+    h: "25 Oktober 2026",
+    b: ["Menurut arsip lama, kejadian berlangsung pada dini hari. Informasi lebih lanjut perlu diperiksa melalui sumber berita tepercaya."],
+    url: "https://videy.co/v?id=IP1E1g601"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark9.jpeg",
+    t: "Dugaan Konflik Antarkelompok Kartel",
+    d: "Arsip lama mencantumkan materi terkait konflik antarkelompok kartel dan dugaan ancaman terhadap kelompok lawan.",
+    h: "25 Oktober 2026",
+    b: ["Sumber tidak menyertakan keterangan terverifikasi mengenai lokasi dan kronologi."],
+    url: "https://videy.co/v?id=Q0h7h3Ky1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark8.jpeg",
+    t: "Serangan di Petatlán, Guerrero, Meksiko",
+    d: "Serangan di sebuah arena sabung ayam di Petatlán, Guerrero, dilaporkan menewaskan 13 orang dan melukai 22 lainnya pada Januari 2024.",
+    h: "25 Oktober 2026",
+    b: [
+      "Materi arsip mengaitkan kejadian dengan perseteruan antarkelompok.",
+      "Laporan tersebut menyebut otoritas setempat menilai insiden itu sebagai serangan terhadap warga sipil."
+    ],
+    url: "https://videy.co/v?id=72o7JsMp1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark7.jpeg",
+    t: "Laporan Kekerasan oleh Kelompok Bersenjata di Nigeria",
+    d: "Arsip lama mencantumkan materi terkait kelompok bersenjata di Nigeria tanpa keterangan lebih lanjut.",
+    h: "25 Oktober 2026",
+    b: ["Lokasi, waktu, dan konteks rekaman belum dijelaskan."],
+    url: ""
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark6.jpeg",
+    t: "Kartel Klasik",
+    d: "Arsip lama mencantumkan materi bertema kartel tanpa deskripsi kejadian.",
+    h: "25 Oktober 2026",
+    b: ["Informasi tambahan belum tersedia."],
+    url: "https://videy.co/v?id=qMX4UplY1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark5.jpeg",
+    t: "Laporan Hukuman Fisik",
+    d: "Arsip lama mencantumkan sebuah rekaman yang dikaitkan dengan hukuman fisik terhadap seseorang.",
+    h: "25 Oktober 2026",
+    b: ["Sumber tidak menjelaskan lokasi, latar kejadian, maupun alasan tindakan tersebut."],
+    url: "https://videy.co/v?id=yk0uCYx51"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark4.jpeg",
+    t: "Kasus Penganiayaan terhadap Tunawisma di Brasil",
+    d: "Arsip lama mencantumkan kasus penganiayaan terhadap seorang tunawisma di dekat rumah sakit di Rio Negro, Brasil.",
+    h: "25 Oktober 2026",
+    b: ["Kronologi lengkap dan perkembangan penyelidikan tidak tersedia dalam materi."],
+    url: "https://videy.co/v?id=ZHowoZPh1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark3.jpeg",
+    t: "Kasus Pembunuhan di Labuhanbatu, Sumatra Utara",
+    d: "Seorang pria dilaporkan menjadi tersangka dalam kasus pembunuhan terhadap tetangganya di Desa Sidorukun, Kabupaten Labuhanbatu.",
+    h: "25 Oktober 2026",
+    b: ["Materi lama menyebut bahwa kejadian berlangsung pada hari Kamis. Tanggal pasti dan perkembangan perkara perlu diverifikasi melalui sumber resmi."],
+    url: "https://videy.co/v?id=J2Vxq0Cv1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/dark2.jpeg",
+    t: "Laporan Penembakan terhadap Orang Tua",
+    d: "Arsip lama mencantumkan materi penembakan yang melibatkan orang lanjut usia.",
+    h: "25 Oktober 2026",
+    b: ["Tidak tersedia informasi tambahan mengenai kronologi maupun lokasi kejadian."],
+    url: "https://videy.co/v?id=QrWgocjZ1"
+  },
+  {
+    c: "Darkness (18+)",
+    img: "images/psy1.jpeg",
+    t: "Konflik Antarkelompok Kartel di Meksiko",
+    d: "Arsip lama mencantumkan materi yang mengaitkan kelompok CJNG dan Kartel Sinaloa.",
+    h: "25 Oktober 2026",
+    b: ["Sumber tidak memberikan informasi tambahan mengenai waktu, lokasi, atau konteks rekaman."],
+    url: "https://videy.co/v?id=VRdyi0h91"
+  },
+
+  // ==================================================
+  // KATEGORI: INCIDENT (18+)
+  // ==================================================
+  {
+    c: "Incident (18+)",
+    img: "images/inc19.jpeg",
+    t: "Pengusaha Tewas Terlindas Truk di Tarakanda",
+    d: "Pengusaha listrik meninggal dunia dalam kecelakaan di Kashiganj Bazar, Bangladesh.",
+    h: "25 Oktober 2026",
+    b: [
+      "Mehedi Hasan Gani, seorang pengusaha listrik berusia 45 tahun, meninggal dunia setelah mengalami kecelakaan lalu lintas di Kashiganj Bazar, Tarakanda, Mymensingh.",
+      "Menurut laporan, korban sedang berada di depan toko ketika sebuah truk melintas dan menabraknya. Polisi jalan raya mengamankan truk beserta pengemudinya untuk keperluan penyelidikan."
+    ],
+    url: "https://videy.co/v?id=Up1zuOHH1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc18.jpeg",
+    t: "Kecelakaan F1 Tom Pryce di Afrika Selatan",
+    d: "Mengenang kecelakaan tragis pembalap Formula 1 Tom Pryce pada 1977.",
+    h: "25 Oktober 2026",
+    b: [
+      "Tom Pryce merupakan pembalap asal Wales yang mengalami kecelakaan fatal saat Grand Prix Afrika Selatan pada 5 Maret 1977 di Sirkuit Kyalami.",
+      "Peristiwa tersebut terjadi pada musim balap Formula 1 1977 dan dikenang sebagai salah satu tragedi dalam sejarah olahraga balap."
+    ],
+    url: "https://videy.co/v?id=mHfG8vQX1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc17.jpeg",
+    t: "Pria Tewas dalam Kecelakaan di Pasar Meksiko",
+    d: "Kecelakaan fatal yang melibatkan dua truk trailer di Mexico City.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pria meninggal dunia setelah mengalami kecelakaan yang melibatkan dua truk trailer di kawasan Central de Abasto, Iztapalapa, Mexico City.",
+      "Rekaman kamera keamanan yang beredar beberapa hari setelah kejadian memunculkan informasi baru mengenai kronologi kecelakaan tersebut."
+    ],
+    url: "https://videy.co/v?id=abUGrQTG1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc16.jpeg",
+    t: "Pejalan Kaki Ditabrak Mobil di João Alfredo",
+    d: "Mobil kehilangan kendali dan menabrak pejalan kaki di kawasan perkotaan.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pejalan kaki mengalami cedera serius setelah sebuah mobil kehilangan kendali dan naik ke trotoar di Avenida 13 de Maio, dekat balai kota João Alfredo.",
+      "Korban mendapatkan penanganan dari tim layanan darurat SAMU. Pengemudi kendaraan juga dilaporkan membutuhkan perawatan."
+    ],
+    url: "https://pomf2.lain.la/f/wh03eago.mp4"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc15.jpeg",
+    t: "Kecelakaan Fatal Pengendara Motor di SP 342",
+    d: "Pengendara Yamaha Fazer 250 meninggal dalam kecelakaan di Brasil.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pengendara Yamaha Fazer 250 meninggal dunia dalam kecelakaan di kawasan Rodovia SP 342, dekat akses menuju Parque Cidade Nova.",
+      "Kejadian dilaporkan berlangsung sekitar pukul 16.00 pada hari Sabtu tanggal 26. Saksi mendengar suara benturan keras, sementara keterlibatan kendaraan lain belum dapat dipastikan."
+    ],
+    url: "https://pastelink.net/4suif8sh"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc14.jpeg",
+    t: "Pengendara Sepeda Tewas dalam Kecelakaan dengan Bus",
+    d: "Kecelakaan lalu lintas melibatkan bus dan pengendara sepeda di Piracicaba.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pengendara sepeda meninggal dunia setelah mengalami kecelakaan dengan bus di Avenida Comendador Luciano Guidotti, Piracicaba, São Paulo.",
+      "Layanan darurat dan polisi datang ke lokasi. Area kejadian diamankan untuk penyelidikan, sedangkan arus lalu lintas menuju pusat kota sempat mengalami perlambatan."
+    ],
+    url: "https://videy.co/v?id=x3FV9MV81"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc13.jpeg",
+    t: "Pria Tersedot ke Dalam Mesin",
+    d: "Insiden kecelakaan kerja yang melibatkan mesin industri.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber yang tersedia memuat laporan mengenai seorang pria yang mengalami kecelakaan saat berada di dekat mesin.",
+      "Informasi lebih lanjut mengenai lokasi, waktu kejadian, dan kronologi lengkap tidak tersedia dalam sumber."
+    ],
+    url: "https://videy.co/v?id=ew87ZfSf1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc12.jpeg",
+    t: "Wanita Tertabrak Traktor",
+    d: "Insiden kecelakaan yang melibatkan seorang wanita dan kendaraan traktor.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber yang tersedia menyebutkan adanya insiden ketika seorang wanita tertabrak traktor.",
+      "Keterangan mengenai lokasi, waktu, kondisi korban, dan penyebab kejadian tidak dijelaskan lebih lanjut dalam sumber."
+    ],
+    url: "https://videy.co/v?id=21sYD1DR1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc11.jpeg",
+    t: "Dua Wanita Tewas Tertimpa Tembok",
+    d: "Insiden runtuhnya tembok yang menewaskan dua wanita.",
+    h: "25 Oktober 2026",
+    b: [
+      "Dua wanita dilaporkan meninggal dunia setelah tertimpa tembok dalam sebuah insiden.",
+      "Sumber awal merujuk pada komentar di Instagram untuk informasi kronologi. Detail tambahan belum tersedia."
+    ],
+    url: "https://videy.co/v?id=0nG7uNdP1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc10.jpeg",
+    t: "Pekerja Terjebak Mesin Pemutar Kawat di Turki",
+    d: "Kecelakaan kerja yang melibatkan mesin pemutar kawat.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sebuah laporan membahas kecelakaan kerja ketika seorang pekerja terlibat dalam insiden dengan mesin pemutar kawat di Turki.",
+      "Kronologi lengkap dan informasi kondisi korban tidak dijelaskan dalam sumber yang tersedia."
+    ],
+    url: "https://videy.co/v?id=mJ1PsdGA1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc9.jpeg",
+    t: "Pengendara Sepeda Motor Terlindas Truk",
+    d: "Kecelakaan lalu lintas yang melibatkan sepeda motor dan truk.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber melaporkan kecelakaan yang melibatkan seorang pengendara sepeda motor dan sebuah truk.",
+      "Informasi mengenai lokasi, waktu, serta kronologi lengkap kejadian tidak tersedia dalam sumber."
+    ],
+    url: "https://videy.co/v?id=JxhQdLaF1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc8.jpeg",
+    t: "Seorang Kakek Terlindas Bus",
+    d: "Laporan kecelakaan yang melibatkan seorang lansia dan bus.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sebuah laporan singkat menyebutkan kecelakaan yang melibatkan seorang pria lanjut usia dan bus.",
+      "Sumber tidak memberikan informasi terperinci mengenai lokasi, waktu, ataupun penyebab kejadian."
+    ],
+    url: "https://videy.co/v?id=gKj8DvUW1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc7.jpeg",
+    t: "Insiden Tertimpa Alat Gym",
+    d: "Kecelakaan yang melibatkan peralatan olahraga.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber melaporkan sebuah insiden ketika seseorang tertimpa peralatan gym.",
+      "Informasi kronologi dirujuk ke komentar Instagram dan tidak dijelaskan lebih lanjut dalam materi yang tersedia."
+    ],
+    url: "https://videy.co/v?id=oavunKI71"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc6.jpeg",
+    t: "Pekerja Tertimpa Forklift di China",
+    d: "Kecelakaan kerja yang melibatkan kendaraan pengangkat barang.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pekerja di China dilaporkan meninggal dunia setelah mengalami kecelakaan yang melibatkan forklift ketika hendak melewati area di dekat kendaraan tersebut.",
+      "Sumber tidak memuat keterangan tambahan mengenai lokasi tepatnya atau hasil penyelidikan."
+    ],
+    url: "https://videy.co/v?id=hwmfLkCu1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc5.jpeg",
+    t: "Kecelakaan Fatal yang Melibatkan Traktor",
+    d: "Seorang influencer muda dilaporkan meninggal dalam kecelakaan traktor.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber melaporkan seorang influencer muda meninggal dunia dalam kecelakaan yang melibatkan traktor.",
+      "Keterangan yang tersedia menyebutkan bahwa kendaraan mengalami kerusakan mekanis secara tiba-tiba. Informasi mengenai lokasi dan penyelidikan lebih lanjut tidak dicantumkan."
+    ],
+    url: "https://pomf2.lain.la/f/868sakkg.mp4"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc4.jpeg",
+    t: "Pria Meninggal Akibat Tertimpa Batu",
+    d: "Laporan insiden fatal yang melibatkan batu.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pria dilaporkan meninggal dunia akibat insiden yang melibatkan batu.",
+      "Sumber tidak menyertakan informasi mengenai lokasi, waktu, maupun kronologi lengkap peristiwa tersebut."
+    ],
+    url: "https://videy.co/v?id=iQ7SZaYI1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc3.jpeg",
+    t: "Ledakan Petasan di Pemalang",
+    d: "Ledakan petasan menjelang Idul Fitri menewaskan seorang remaja.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sebuah ledakan petasan terjadi di Desa Semingkir, Pemalang, Jawa Tengah, menjelang Idul Fitri. Ahmad Muhtohar, berusia 18 tahun, dilaporkan meninggal dunia dalam kejadian tersebut.",
+      "Menurut sumber, sekelompok remaja membawa petasan rakitan berukuran besar ke Bendungan Semingkir untuk merayakan berakhirnya Ramadan. Tidak lama kemudian, ledakan terjadi di lokasi."
+    ],
+    url: "https://pastelink.net/j1afvkti"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc2.jpeg",
+    t: "Kecelakaan yang Melibatkan Kereta",
+    d: "Laporan insiden fatal yang berkaitan dengan perjalanan kereta.",
+    h: "25 Oktober 2026",
+    b: [
+      "Sumber memuat laporan singkat mengenai sebuah kecelakaan yang melibatkan kereta.",
+      "Tidak tersedia keterangan tambahan mengenai lokasi, waktu, identitas korban, atau kronologi kejadian."
+    ],
+    url: "https://videy.co/v?id=8Ow4mAgm1"
+  },
+  {
+    c: "Incident (18+)",
+    img: "images/inc1.jpeg",
+    t: "Kecelakaan Kerja di Pabrik",
+    d: "Pekerja meninggal dunia dalam insiden yang melibatkan mesin pabrik.",
+    h: "25 Oktober 2026",
+    b: [
+      "Seorang pekerja pabrik dilaporkan meninggal dunia setelah mengalami kecelakaan ketika sedang bekerja dengan mesin.",
+      "Sumber tidak memberikan informasi lebih lanjut mengenai lokasi pabrik, waktu kejadian, ataupun hasil penyelidikan."
+    ],
+    url: "https://videy.co/v?id=gIMjScoA1"
+  }
+
+];
+
+/* ==================================================
+   HELPER
+================================================== */
+const $ = id => document.getElementById(id);
+
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+}[ch]));
+
+// Dipakai kalau "link" artikel masih kosong
+const FALLBACK_LINK = "https://instagram.com/gooreplix";
+
+// Hanya terima link http(s) agar aman dari "javascript:" dsb.
+const safeLink = url => /^https?:\/\//i.test((url || "").trim()) ? url.trim() : "";
+
+/* ==================================================
+   STATE
+================================================== */
+const categories = ["Berita", "Darkness (18+)", "Incident (18+)"];
+let currentCategory = "Berita";
+let query = "";
+
+$("cats").innerHTML = categories.map(c =>
+  `<button type="button" aria-pressed="${c === currentCategory}">${esc(c)}</button>`
+).join("");
+
+/* ==================================================
+   RENDER
+================================================== */
+function filteredArticles() {
+  return A.map((a, i) => ({ ...a, i })).filter(a =>
+    a.c === currentCategory &&
+    (a.t + " " + a.d + " " + a.c).toLowerCase().includes(query)
+  );
+}
+
+function render() {
+  const list = filteredArticles();
+  $("empty").hidden = list.length !== 0;
+
+  const lead = list[0];
+
+  $("lead").innerHTML = lead ? `
+    <article class="lead">
+      <div>
+        <span class="tag">${esc(lead.c)}</span>
+        <h2 tabindex="0" data-i="${lead.i}">${esc(lead.t)}</h2>
+        <p>${esc(lead.d)}</p>
+        <span class="meta">${esc(lead.h)}</span>
+      </div>
+      <div class="cover" role="img" aria-label="${esc(lead.t)}"
+        style="background-color:#ffc9c9;background-image:url('${esc(lead.img)}')">
+        <span>${esc(lead.c)}</span>
+      </div>
+    </article>` : "";
+
+  $("grid").innerHTML = list.slice(1).map(a => `
+    <article class="item" tabindex="0" data-i="${a.i}">
+      <img src="${esc(a.img)}" alt="${esc(a.t)}" loading="lazy" onerror="this.hidden=true">
+      <span class="tag">${esc(a.c)}</span>
+      <h3>${esc(a.t)}</h3>
+      <p>${esc(a.d)}</p>
+      <span class="meta">${esc(a.h)}</span>
+    </article>`).join("");
+}
+
+function openArticle(index) {
+  const a = A[index];
+  if (!a) return;
+
+  const link = safeLink(a.url) || FALLBACK_LINK;
+  const videoButton =
+    `<a class="vid" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Lihat video disini</a>`;
+
+  $("art").innerHTML = `
+    <button class="close" type="button" id="closeArticle">Tutup</button>
+    <span class="tag">${esc(a.c)}</span>
+    <img class="article-image" src="${esc(a.img)}" alt="${esc(a.t)}" onerror="this.hidden=true">
+    <h2>${esc(a.t)}</h2>
+    <div class="meta" style="margin-bottom:18px">${esc(a.h)}</div>
+    ${a.b.map(p => `<p>${esc(p)}</p>`).join("")}
+    ${videoButton}
+  `;
+
+  $("dlg").showModal();
+  $("closeArticle").addEventListener("click", () => $("dlg").close());
+}
+
+/* ==================================================
+   EVENT
+================================================== */
+document.addEventListener("click", e => {
+  const article = e.target.closest("[data-i]");
+  if (article) openArticle(Number(article.dataset.i));
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && e.target.matches("[data-i]")) {
+    openArticle(Number(e.target.dataset.i));
+  }
+});
+
+$("dlg").addEventListener("click", function (e) {
+  if (e.target === this) this.close();
+});
+
+$("cats").addEventListener("click", e => {
+  const button = e.target.closest("button");
+  if (!button) return;
+
+  currentCategory = button.textContent;
+
+  [...$("cats").children].forEach(b => {
+    b.setAttribute("aria-pressed", b === button);
+  });
+
+  render();
+});
+
+/* Hamburger / dropdown (HP) */
+function setMenu(open) {
+  $("menu").classList.toggle("open", open);
+  $("burger").setAttribute("aria-expanded", open);
+  $("burger").setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+}
+
+$("burger").addEventListener("click", () => {
+  setMenu(!$("menu").classList.contains("open"));
+});
+
+// Tutup dropdown setelah memilih kategori
+$("cats").addEventListener("click", () => setMenu(false));
+
+// Tutup dropdown kalau klik di luar header atau tekan Escape
+document.addEventListener("click", e => {
+  if (!e.target.closest("header")) setMenu(false);
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") setMenu(false);
+});
+
+/* Header: sembunyi saat scroll ke bawah, muncul saat scroll ke atas */
+(function () {
+  const header = document.querySelector("header");
+  const SHOW_ZONE = 80;   // di dekat bagian atas halaman header selalu tampil
+  const SENSITIVITY = 6;  // minimal gerakan scroll (px) supaya tidak gampang goyang
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function update() {
+    const y = Math.max(0, window.scrollY);
+    const diff = y - lastY;
+
+    if (y <= SHOW_ZONE || diff <= -SENSITIVITY) {
+      header.classList.remove("header-hidden");
+    } else if (diff >= SENSITIVITY) {
+      const typing = header.contains(document.activeElement) &&
+                     document.activeElement.matches("input");
+      if (!typing) {
+        setMenu(false);
+        header.classList.add("header-hidden");
+      }
+    }
+
+    if (Math.abs(diff) >= SENSITIVITY || y <= SHOW_ZONE) lastY = y;
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }, { passive: true });
+})();
+
+$("q").addEventListener("input", function () {
+  query = this.value.toLowerCase().trim();
+  render();
+});
+
+$("theme").addEventListener("click", () => {
+  const root = document.documentElement;
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+});
+
+render();
+</script>
+
 </body>
 </html>

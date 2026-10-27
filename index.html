@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Goreplix</title>
+<link rel="icon" type="image/png" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon.ico">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -527,7 +529,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   max-height: 340px;
   object-fit: cover;
   border-radius: 12px;
-  margin: 18px 0;
+  margin: 18px 0 10px;
 }
 
 .art h2 {
@@ -554,6 +556,30 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
 }
 
 .vid:hover { opacity: .9; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.actions .vid { margin-top: 0; }
+
+.vid-ad {
+  display: inline-block;
+  text-align: center;
+  margin: 0 0 4px;
+  padding: 6px 14px;
+  font-size: 12px;
+  background: transparent;
+  color: var(--red);
+  border: 1.5px solid var(--red);
+}
+
+.ad-wrap {
+  text-align: center;
+}
 
 .close {
   float: right;
@@ -698,6 +724,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   .lead { gap: 18px; padding: 16px; margin-bottom: 18px; }
   .lead p { font-size: 17px; }
   .art { padding: 22px 18px 26px; }
+  .actions { flex-direction: column; }
   .vid { display: block; text-align: center; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .ticker { font-size: 12px; }
@@ -727,6 +754,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
   }
 }
 </style>
+<script src="https://pl28818095.profitableratecpmnetwork.com/08/69/5b/08695b6a66660a6bae4dcc925f06c1ff.js"></script>
 </head>
 
 <body>
@@ -864,97 +892,7 @@ const A = [
   // ==================================================
   // KATEGORI: BERITA
   // ==================================================
-  {
-    c: "Berita",
-    img: "images/berita1.jpg",
-    t: "Jam masuk kantor digeser, komuter Jabodetabek mulai coba pola baru",
-    d: "Sejumlah perusahaan menguji jam kerja fleksibel untuk mengurai kemacetan pagi.",
-    h: "25 Oktober 2026",
-    b: [
-      "Beberapa perusahaan di Jabodetabek mulai menggeser jam masuk kantor untuk mengurangi kepadatan di jam sibuk.",
-      "Pekerja memiliki pengalaman yang beragam terhadap perubahan jam kerja tersebut.",
-      "Hasil evaluasi uji coba akan menjadi bahan pertimbangan untuk kebijakan selanjutnya."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita2.jpg",
-    t: "Aplikasi pesan baru janjikan enkripsi bawaan, pengguna diminta tetap waspada",
-    d: "Fitur keamanan jadi alasan utama, tetapi kebijakan privasi tetap perlu diperiksa.",
-    h: "25 Oktober 2026",
-    b: [
-      "Sebuah aplikasi pesan menawarkan enkripsi untuk melindungi percakapan pengguna.",
-      "Keamanan digital tidak hanya bergantung pada enkripsi, tetapi juga pada pengelolaan data.",
-      "Pengguna disarankan membaca kebijakan privasi dan mengaktifkan verifikasi dua langkah."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita3.jpg",
-    t: "Warung kopi pinggir jalan ramai lagi, anak muda cari tempat nongkrong murah",
-    d: "Harga terjangkau dan suasana santai membuat warung kopi jadi pilihan.",
-    h: "25 Oktober 2026",
-    b: [
-      "Warung kopi sederhana menjadi salah satu tempat berkumpul anak muda.",
-      "Pelanggan datang untuk bertemu teman, bersantai, maupun bekerja.",
-      "Sejumlah pemilik warung mulai menyediakan fasilitas tambahan untuk pelanggan."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita4.jpg",
-    t: "Turnamen futsal antar-kampus menarik perhatian peserta",
-    d: "Kompetisi olahraga menjadi ajang bertemu dan berkompetisi antarmahasiswa.",
-    h: "25 Oktober 2026",
-    b: [
-      "Turnamen futsal antarkampus mempertemukan tim dari berbagai wilayah.",
-      "Panitia menyiapkan pertandingan dan fasilitas untuk peserta serta penonton.",
-      "Informasi jadwal pertandingan diumumkan melalui kanal penyelenggara."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita5.jpg",
-    t: "Harga bahan pangan menjadi perhatian warga",
-    d: "Warga membandingkan harga kebutuhan pokok di sejumlah pasar.",
-    h: "25 Oktober 2026",
-    b: [
-      "Harga bahan pangan dapat berubah mengikuti pasokan dan permintaan.",
-      "Pedagang menyesuaikan stok dengan kondisi distribusi.",
-      "Warga dapat membandingkan harga di beberapa tempat sebelum berbelanja."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita6.jpg",
-    t: "Game buatan studio lokal menarik perhatian pemain",
-    d: "Karya pengembang lokal memperlihatkan perkembangan industri gim.",
-    h: "25 Oktober 2026",
-    b: [
-      "Gim buatan pengembang lokal terus mendapat perhatian dari para pemain.",
-      "Tim pengembang mengembangkan fitur dan konten berdasarkan proses produksi mereka.",
-      "Pembaruan berikutnya dapat dipantau melalui kanal resmi pengembang."
-    ],
-    url: ""
-  },
-  {
-    c: "Berita",
-    img: "images/berita7.jpg",
-    t: "Komunitas bersepeda membuka kegiatan untuk pemula",
-    d: "Kegiatan bersama mengajak warga berolahraga dan mengenal rute yang aman.",
-    h: "25 Oktober 2026",
-    b: [
-      "Komunitas bersepeda mengadakan kegiatan untuk orang yang baru mulai bersepeda.",
-      "Peserta dapat mempelajari dasar keselamatan dan perencanaan rute.",
-      "Informasi kegiatan tersedia melalui media sosial komunitas."
-    ],
-    url: ""
-  },
+  // taro disini
 
   // ==================================================
   // KATEGORI: DARKNESS (18+)
@@ -1782,13 +1720,18 @@ function openArticle(index) {
   if (!a) return;
 
   const link = safeLink(a.url) || FALLBACK_LINK;
+  // Ganti dengan Smart Link dari dashboard Adsterra
+  const ADSTERRA_LINK = "https://www.profitableratecpmnetwork.com/ur7b9xzt?key=dbcae5f60b6d5cbc27b0952a618d42f9";
   const videoButton =
     `<a class="vid" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Lihat video disini</a>`;
+  const adButton =
+    `<a class="vid vid-ad" href="${esc(ADSTERRA_LINK)}" target="_blank" rel="noopener noreferrer sponsored">lihat disini</a>`;
 
   $("art").innerHTML = `
     <button class="close" type="button" id="closeArticle">Tutup</button>
     <span class="tag">${esc(a.c)}</span>
     <img class="article-image" src="${esc(a.img)}" alt="${esc(a.t)}" onerror="this.hidden=true">
+    <div class="ad-wrap">${adButton}</div>
     <h2>${esc(a.t)}</h2>
     <div class="meta" style="margin-bottom:18px">${esc(a.h)}</div>
     ${a.b.map(p => `<p>${esc(p)}</p>`).join("")}
@@ -1901,5 +1844,6 @@ $("theme").addEventListener("click", () => {
 render();
 </script>
 
+<script data-cfasync="false" src="https://bauval.org/14/8082954a08f8f4df4f8a24faa1e53509"></script>
 </body>
 </html>

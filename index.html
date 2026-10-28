@@ -1677,13 +1677,23 @@ $("cats").innerHTML = categories.map(c =>
    RENDER
 ================================================== */
 function filteredArticles() {
+  // Kalau sedang mencari, cari di SEMUA kategori. Kalau kosong, ikuti kategori aktif.
+  const searching = query !== "";
   return A.map((a, i) => ({ ...a, i })).filter(a =>
-    a.c === currentCategory &&
+    (searching || a.c === currentCategory) &&
     (a.t + " " + a.d + " " + a.c).toLowerCase().includes(query)
   );
 }
 
+function syncCategoryButtons() {
+  // Saat mencari, tidak ada kategori yang ditandai aktif (hasil dari semua kategori)
+  [...$("cats").children].forEach(b => {
+    b.setAttribute("aria-pressed", query === "" && b.textContent === currentCategory);
+  });
+}
+
 function render() {
+  syncCategoryButtons();
   const list = filteredArticles();
   $("empty").hidden = list.length !== 0;
 
@@ -1764,9 +1774,9 @@ $("cats").addEventListener("click", e => {
 
   currentCategory = button.textContent;
 
-  [...$("cats").children].forEach(b => {
-    b.setAttribute("aria-pressed", b === button);
-  });
+  // Pilih kategori = keluar dari mode pencarian
+  query = "";
+  $("q").value = "";
 
   render();
 });

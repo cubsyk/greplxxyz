@@ -510,6 +510,8 @@ dialog {
 }
 
 dialog::backdrop { background: rgba(0,0,0,.6); }
+dialog { overscroll-behavior: contain; }
+html.no-scroll, html.no-scroll body { overflow: hidden; }
 
 .art {
   padding: 28px 26px 32px;
@@ -1727,11 +1729,13 @@ function openArticle(index) {
   const a = A[index];
   if (!a) return;
 
-  const link = safeLink(a.url) || FALLBACK_LINK;
+  const link = safeLink(a.url); // kosong kalau url tidak diisi / tidak valid
   // Ganti dengan Smart Link dari dashboard Adsterra
   const ADSTERRA_LINK = "https://www.profitableratecpmnetwork.com/ur7b9xzt?key=dbcae5f60b6d5cbc27b0952a618d42f9";
-  const videoButton =
-    `<a class="vid" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Lihat video disini</a>`;
+  // Tombol "Lihat video disini" hanya muncul kalau url berita diisi
+  const videoButton = link
+    ? `<a class="vid" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Lihat video disini</a>`
+    : "";
   const adButton =
     `<a class="vid vid-ad" href="${esc(ADSTERRA_LINK)}" target="_blank" rel="noopener noreferrer sponsored">lihat disini</a>`;
 
@@ -1747,8 +1751,14 @@ function openArticle(index) {
   `;
 
   $("dlg").showModal();
+  document.documentElement.classList.add("no-scroll");
   $("closeArticle").addEventListener("click", () => $("dlg").close());
 }
+
+// Buka kembali scroll halaman utama saat pop-up ditutup (tombol, klik luar, atau Esc)
+$("dlg").addEventListener("close", () => {
+  document.documentElement.classList.remove("no-scroll");
+});
 
 /* ==================================================
    EVENT
